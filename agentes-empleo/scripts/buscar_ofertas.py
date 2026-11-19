@@ -175,7 +175,9 @@ def computrabajo_detalle(o):
         return False
     t = texto(h)
     i = t.find("Descripción de la oferta")
-    cuerpo = t[i:i + 6000] if i >= 0 else t[:6000]
+    if i < 0:  # oferta cerrada: Computrabajo redirige al listado
+        return False
+    cuerpo = t[i:i + 6000]
     j = cuerpo.find("Requerimientos")
     o["descripcion"] = cuerpo[:4000]
     o["contrato"] = contrato_de(cuerpo[:400]) if contrato_de(cuerpo[:400]) != "no especificado" else contrato_de(cuerpo)
