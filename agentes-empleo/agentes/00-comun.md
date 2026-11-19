@@ -1,7 +1,7 @@
 # Reglas comunes para todos los agentes
 
 Estas reglas aplican a los cuatro agentes (Buscador, Postulador, LinkedIn y Resumen matutino).
-Cada agente se ejecuta como una sesión nueva programada. El mensaje que lo despierta trae un bloque
+Cada agente se ejecuta como una tarea programada. El mensaje que lo despierta trae un bloque
 `CONFIG` con los IDs privados (carpetas de Drive, etiquetas de Gmail, correo del candidato). Esos IDs
 **no** están en este repositorio porque es público.
 
@@ -17,8 +17,10 @@ mkdir -p /tmp/trabajo && cd /tmp/trabajo
 - **Cómo leer archivos de Drive:** usa siempre `download_file_content` (no `read_file_content`, que
   devuelve vacío en archivos de texto). La herramienta guarda el archivo en disco y te dice la ruta; cópialo
   con `cp` a `/tmp/trabajo/` y trabájalo desde ahí (`python3 -c 'import json…'`, `jq`, etc.).
-- Descarga el perfil maestro (`CONFIG.PERFIL_ID`) a `/tmp/trabajo/perfil_maestro.json`. Es la **única
-  fuente de verdad** sobre el candidato.
+- Descarga el perfil maestro a `/tmp/trabajo/perfil_maestro.json`. Es la **única fuente de verdad**
+  sobre el candidato. Se actualiza creando una versión nueva, así que búscalo siempre por título:
+  `search_files` con `parentId = '<CONFIG.CARPETA_SISTEMA>' and title contains 'perfil_maestro'` y
+  `orderBy: "modifiedTime desc"`; usa el primero. `CONFIG.PERFIL_ID`, si aparece, es solo de referencia.
 - Si una herramienta de Drive o Gmail falla, reintenta una vez. Si vuelve a fallar, deja constancia en tu
   archivo de salida y sigue con lo demás; nunca abandones la ejecución sin escribir el registro.
 
