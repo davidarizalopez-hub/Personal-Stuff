@@ -246,29 +246,27 @@ def magneto_detalle(o):
     h = get(o["url"])
     if not h:
         return False
-    jp = jsonld_jobposting(h) or {}
     t = texto(h)
-    if jp.get("title"):
-        o["titulo"] = jp["title"]
-    o["empresa"] = (jp.get("hiringOrganization") or {}).get("name", "") or "Confidencial"
-    loc = jp.get("jobLocation") or {}
-    if isinstance(loc, list):
-        loc = loc[0] if loc else {}
-    addr = loc.get("address") or {}
-    o["ciudad"] = ", ".join(x for x in [addr.get("addressLocality"), addr.get("addressRegion")] if x)
-    o["publicada"] = jp.get("datePosted", "")
-    o["vence"] = jp.get("validThrough", "")
-    bs = ((jp.get("baseSalary") or {}).get("value") or {})
-    if isinstance(bs, dict) and (bs.get("minValue") or bs.get("maxValue") or bs.get("value")):
-        o["salario_min"] = bs.get("minValue") or bs.get("value")
-        o["salario_max"] = bs.get("maxValue") or bs.get("value")
-        o["salario_texto"] = f"${o['salario_min']:,.0f} - ${o['salario_max']:,.0f}".replace(",", ".")
-    else:
-        m = re.search(r"\$\s?[\d.,]+(?:\s*(?:a|-)\s*\$\s?[\d.,]+)?", t)
-        o["salario_texto"] = m.group(0) if m else ""
-    desc = texto(jp.get("description", "")) if jp.get("description") else t[:4000]
+    m = re.search(r"<title>\s*Empleo como (.*?) en (.*?)\s*\|\s*Magneto", h, re.S)
+    if m:
+        o["titulo"] = html.unescape(m.group(1)).strip()
+        o["empresa"] = html.unescape(m.group(2)).strip() or "Confidencial"
+    i = t.find("Requisitos para aplicar a la vacante")
+    cab = t[max(0, i - 400):i]
+    m = re.search(r"\|\s*(Término indefinido|Término fijo|Temporal|Por obra o labor|Prestación de servicios|Contrato de aprendizaje)", cab)
+    o["contrato"] = contrato_de(m.group(1)) if m else contrato_de(t)
+    if m and "obra" in m.group(1).lower():
+        o["contrato"] = "obra o labor"
+    m = re.search(r"Fecha de publicación\s*(\d{4}-\d{2}-\d{2})", cab)
+    o["publicada"] = m.group(1) if m else ""
+    lineas = [l.strip() for l in t[i:i + 6000].split("\n") if l.strip()]
+    # Estructura: Requisitos... / experiencia y estudios / salario / ciudad / descripción
+    sal_idx = next((k for k, l in enumerate(lineas[:6]) if l.startswith("$") or "convenir" in l.lower() or "salario" in l.lower()), None)
+    o["salario_texto"] = lineas[sal_idx] if sal_idx is not None else ""
+    o["ciudad"] = lineas[sal_idx + 1] if sal_idx is not None and sal_idx + 1 < len(lineas) else ""
+    desc = "\n".join(lineas[(sal_idx + 2) if sal_idx is not None else 1:])
+    o["requisitos"] = lineas[1] if len(lineas) > 1 else ""
     o["descripcion"] = desc[:4000]
-    o["contrato"] = contrato_de(t)
     o["correos"] = correos(desc)
     return True
 
