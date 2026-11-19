@@ -1,0 +1,17 @@
+{
+ "nombre": "Nombre Apellido",
+ "titular": "Gerente de Logística | Transporte y Distribución | 10 años de experiencia",
+ "contacto": {"telefono": "+57 300 000 0000", "email": "correo@ejemplo.com", "linkedin": "linkedin.com/in/usuario", "ubicacion": "Barranquilla, Colombia · Disponible para traslado"},
+ "perfil": "Resumen de 4 a 6 líneas con las palabras clave de la oferta. Se puede resaltar **una cifra** con dobles asteriscos.",
+ "logros_clave": ["Logro 1 con **cifra real**.", "Logro 2."],
+ "competencias": ["Competencia 1", "Competencia 2"],
+ "experiencia": [
+  {"cargo": "Cargo", "empresa": "Empresa S.A.S.", "lugar": "Ciudad", "fechas": "01/2020 – Actual", "resumen": "Opcional.", "logros": ["Viñeta 1", "Viñeta 2"]}
+ ],
+ "otras_experiencias": [{"cargo": "Cargo", "empresa": "Empresa", "fechas": "01/2010 – 12/2011"}],
+ "educacion": [{"titulo": "Ingeniero Industrial", "institucion": "Universidad", "anio": "2009"}],
+ "herramientas": "SAP, Power BI, Excel avanzado",
+ "metodologias": "SCRUM, Lean Six Sigma",
+ "idiomas": "Español nativo · Inglés B2",
+ "nota_final": "Referencias disponibles a solicitud."
+}
