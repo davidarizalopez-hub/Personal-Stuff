@@ -1,0 +1,30 @@
+{
+ "nombre": "Nombre Apellido",
+ "titulo_profesional": "Ingeniero Industrial, Esp. en Logística",
+ "idioma": "es",
+ "contacto": {
+  "telefono": "+57 300 000 0000",
+  "email": "correo@ejemplo.com",
+  "linkedin": "linkedin.com/in/usuario",
+  "ubicacion": "Barranquilla, Colombia"
+ },
+ "lugar_fecha": "Barranquilla, 20 de noviembre de 2026",
+ "destinatario": ["Señores", "Equipo de Selección", "Empresa Ejemplo S.A.", "Cartagena"],
+ "referencia": "Postulación al cargo de Jefe de Logística",
+ "saludo": "Respetado equipo de selección:",
+ "parrafos": [
+  "Párrafo 1 (gancho): a qué cargo se postula, dónde vio la oferta y por qué esta empresa o este reto en particular, usando solo lo que dice la oferta.",
+  "Párrafo 2: la experiencia más relevante para el cargo, con **2 o 3 cifras reales** que respondan a los requisitos."
+ ],
+ "vinetas_titulo": "Lo que aportaría al cargo:",
+ "vinetas": [
+  "Requisito 1 de la oferta → hecho real que lo demuestra.",
+  "Requisito 2 → hecho real.",
+  "Requisito 3 → hecho real."
+ ],
+ "parrafos_finales": [
+  "Párrafo de toque personal: una conexión verdadera con el cargo, la región o el sector, y el estilo de liderazgo.",
+  "Cierre: disponibilidad (traslado o permiso de trabajo si aplica), invitación a una entrevista y agradecimiento."
+ ],
+ "despedida": "Cordialmente,"
+}

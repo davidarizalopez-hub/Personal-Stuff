@@ -98,7 +98,7 @@ Prioridad: **A** ≥ 75, **B** 60–74, **C** < 60 (no se postula, solo queda re
 |---|---|---|
 | `ofertas/` | `ofertas_AAAA-MM-DD_HHMM.json` por ejecución y `vistas_acumuladas_AAAA-MM-DD_HHMM.txt` | Buscador |
 | `postulaciones/` | `registro_postulaciones_AAAA-MM-DD_HHMM.json` (historial completo, el más reciente manda) | Postulador |
-| `CV adaptados/` | `CV_David_Ariza_<Empresa>_<Cargo>.pdf` y `.docx` | Postulador |
+| `CV adaptados/` | `CV_David_Ariza_<Empresa>_<Cargo>.pdf` y `.docx`, y la carta de presentación de cada postulación: `Carta_David_Ariza_<Empresa>_<Cargo>.pdf` y `.docx` | Postulador |
 | `linkedin/` | `LinkedIn_AAAA-MM-DD` (Google Doc con invitaciones, publicación y mejoras del perfil) | LinkedIn |
 | `Vacantes LinkedIn (sube aquí las capturas)/` | Capturas de publicaciones de vacantes que sube David; las ya atendidas pasan a `procesadas/` | David / Postulador |
 

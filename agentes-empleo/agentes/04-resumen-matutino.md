@@ -45,11 +45,14 @@ escribirle", "aplicar hoy en el portal con el CV adaptado", "preparar entrevista
      revisadas y válidas, respuestas, y días que faltan para el 1 de diciembre.
   3. **Ofertas destacadas para seguimiento** (la lista de arriba).
   4. **Aplica hoy en portales:** las postulaciones `lista_para_portal` (máximo 6, primero las de prioridad A),
-     numeradas. Cada una con un enlace **"Ver oferta y postularme"** a la URL de la oferta (no al CV) y el
-     nombre del PDF que debe adjuntar. **Adjunta al correo los PDF** de esas ofertas (descárgalos de
-     `CONFIG.CARPETA_CV` con `download_file_content` y adjúntalos con referencia `sha256:<hash>:<ruta>`), para
-     que David los tenga a mano al postularse desde el celular. Indica: "Al aplicar, sube el PDF adaptado y
-     responde a este correo con 'aplicada' y los números (por ejemplo, 'aplicada 1, 2, 5')". En cada
+     numeradas. Cada una con un enlace **"Ver oferta y postularme"** a la URL de la oferta (no al CV) y los
+     nombres del CV y de la carta de presentación que debe adjuntar. **Adjunta al correo los PDF del CV y de la
+     carta** de esas ofertas (descárgalos de `CONFIG.CARPETA_CV` con `download_file_content` usando los enlaces
+     `cv_pdf_url` y `carta_pdf_url` del registro, y adjúntalos con referencia `sha256:<hash>:<ruta>`), para
+     que David los tenga a mano al postularse desde el celular. Indica: "Al aplicar, sube el CV adaptado y la
+     carta (o pega su texto en el campo de presentación del portal) y responde a este correo con 'aplicada' y
+     los números (por ejemplo, 'aplicada 1, 2, 5')". Si una entrada aún no tiene carta, dilo ("carta en
+     preparación"). En cada
      ejecución busca en Gmail las respuestas de David que digan `aplicada` (`from:me aplicada newer_than:7d`),
      abre el hilo con `get_thread` para saber a qué oferta corresponde cada número del correo original, y
      actualiza esas entradas a `aplicada_por_david` en un nuevo `registro_postulaciones_*`.
