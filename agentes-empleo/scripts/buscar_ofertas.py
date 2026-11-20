@@ -16,20 +16,37 @@ UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chr
 SALARIO_MIN = 9_000_000
 
 CARGOS = [
-    "gerente de logistica", "director de logistica", "gerente de operaciones",
-    "director de operaciones", "director de transporte", "gerente de transporte",
+    # Logística, transporte y cadena de abastecimiento
+    "gerente de logistica", "director de logistica", "director de transporte", "gerente de transporte",
     "jefe de transporte", "jefe de logistica", "gerente de cadena de abastecimiento",
-    "director de cadena de suministro", "gerente de distribucion", "director de proyectos",
-    "gerente de supply chain", "director de supply chain", "jefe nacional de logistica",
-    "gerente de comercio exterior", "director de operaciones portuarias",
+    "director de cadena de suministro", "gerente de distribucion", "gerente de supply chain",
+    "director de supply chain", "jefe nacional de logistica", "gerente de comercio exterior",
+    "director de operaciones portuarias",
+    # Operaciones, producción y mejora continua (ingeniería industrial)
+    "gerente de operaciones", "director de operaciones", "gerente de planta", "director de planta",
+    "gerente de produccion", "director de produccion", "gerente de mejora continua",
+    "gerente de procesos", "gerente de planeacion",
+    # Proyectos
+    "director de proyectos", "gerente de proyectos", "gerente de pmo",
+    # Administrativo y gerencia general
+    "gerente administrativo", "director administrativo", "gerente administrativo y financiero",
+    "gerente general", "gerente de sucursal", "gerente regional",
+    # Comercial, ventas y servicio al cliente
+    "gerente comercial", "director comercial", "gerente de ventas", "director de ventas",
+    "gerente de cuentas clave", "gerente de servicio al cliente", "director de servicio al cliente",
+    "gerente de experiencia del cliente",
+    # Compras
+    "gerente de compras", "director de compras",
 ]
 LI_KEYWORDS = ["gerente logistica", "director logistica", "gerente operaciones",
                "director operaciones", "director transporte", "supply chain manager",
-               "jefe transporte", "director proyectos", "gerente cadena abastecimiento",
-               "logistics manager"]
+               "jefe transporte", "director proyectos", "gerente proyectos", "gerente cadena abastecimiento",
+               "logistics manager", "gerente comercial", "gerente ventas", "gerente administrativo",
+               "gerente servicio al cliente", "gerente de planta", "gerente compras", "gerente general"]
 # Fuera de Colombia (David confirmó el 19-nov-2026 que busca en todos los países; requiere visa patrocinada)
 LI_KEYWORDS_INTL = ["gerente de logistica", "gerente de operaciones", "logistics manager",
-                    "supply chain manager", "operations manager", "director de logistica"]
+                    "supply chain manager", "operations manager", "director de logistica",
+                    "gerente de proyectos", "gerente comercial"]
 LI_LOCS_INTL = ["México", "Panamá", "Perú", "Chile", "Ecuador", "República Dominicana", "Costa Rica",
                 "Guatemala", "España", "Estados Unidos"]
 CT_DEPTOS = ["", "atlantico", "bolivar", "magdalena"]
@@ -43,7 +60,7 @@ COSTA = ["barranquilla", "cartagena", "santa marta", "soledad", "malambo", "gala
 TITULO_SI = re.compile(r"\b(gerente|director|directora|head|manager|jefe|subgerente|vp|vicepresidente|lider|superintendente)\b")
 DIRECTIVO = re.compile(r"\b(gerente|director|directora|head|manager|subgerente|vp|vicepresidente|superintendente|jefe nacional|jefe regional)\b")
 TITULO_NO = re.compile(r"\b(auxiliar|asistente|aprendiz|practicante|pasante|operari[oa]|conductor|analista|tecnico|tecnologo|ayudante|mensajero|vendedor|asesor|promotor|cajer[oa]|bodeguer[oa]|montacarguista|recepcionista|enfermer[oa]|medic[oa]|docente|profesor|chef|cocin)\b")
-AREA_SI = re.compile(r"(logistic|transporte|operacion|supply|cadena|abastecimiento|suministro|distribucion|almacen|bodega|inventario|comercio exterior|puert|portuari|flota|proyecto|planta|produccion|compras|despacho|aduan|carga|cedi|centro de distribucion|ultima milla|fleet)")
+AREA_SI = re.compile(r"(logistic|transporte|operacion|operations|supply|cadena|abastecimiento|suministro|distribucion|almacen|bodega|inventario|comercio exterior|puert|portuari|flota|proyecto|project|pmo|planta|plant|produccion|manufactur|compras|procurement|despacho|aduan|carga|cedi|centro de distribucion|ultima milla|fleet|comercial|ventas|sales|negocios|cuentas clave|key account|servicio al cliente|experiencia del cliente|customer|administrativ|general|sucursal|regional|mejora continua|procesos|planeacion|excelencia operacional)")
 
 
 def norm(s):
@@ -371,7 +388,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--vistas", default="")
     ap.add_argument("--salida", default="ofertas.json")
-    ap.add_argument("--max-detalles", type=int, default=100)
+    ap.add_argument("--max-detalles", type=int, default=150)
     ap.add_argument("--portales", default="Computrabajo,Elempleo,Magneto,LinkedIn")
     a = ap.parse_args()
     vistas = set()

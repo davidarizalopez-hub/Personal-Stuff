@@ -53,7 +53,11 @@ mkdir -p /tmp/trabajo && cd /tmp/trabajo
   `perfil_maestro.permiso_trabajo.texto_cv`, la ubicación del contacto dice "Barranquilla, Colombia ·
   Disponible para reubicación internacional", y el correo lo dice en una frase. Nunca afirmes que tiene
   permiso de trabajo en otro país. Si la oferta exige residencia o permiso vigente sin patrocinio, no postules.
-- Cargos: los de `preferencias_busqueda.cargos_objetivo` del perfil.
+- Cargos: los de `preferencias_busqueda.cargos_objetivo` del perfil. Desde el 20-nov-2026 se busca en
+  **todas las vertientes de la ingeniería industrial**: logística y cadena de abastecimiento; operaciones,
+  producción y planta; proyectos; administrativo y gerencia general; comercial, ventas y cuentas clave;
+  servicio y experiencia del cliente; compras; mejora continua, procesos y planeación. Siempre cargos de
+  gerencia, dirección o jefatura, con los mismos filtros de salario y contrato.
 
 ## 4. Puntaje de afinidad (0 a 100)
 
@@ -66,6 +70,19 @@ mkdir -p /tmp/trabajo && cd /tmp/trabajo
 | Sector afín (agroindustria, consumo masivo, puertos, transporte, manufactura, construcción) | 0–5 |
 
 Prioridad: **A** ≥ 75, **B** 60–74, **C** < 60 (no se postula, solo queda registrada).
+
+**Guía de afinidad por área** (sobre 45; usa hechos reales del perfil maestro):
+- Logística, transporte, distribución, supply chain, comercio exterior: 35–45 (núcleo del perfil).
+- Operaciones y gerencia de operaciones multisede: 30–42 (ES con 300+ personas en 4 plantas 24/7).
+- Proyectos / PMO: 25–38 (PC Tronic: 7 proyectos simultáneos, 95 % a tiempo, presupuestos de $900 MM, margen +18 %).
+  Bajar si exigen PMP, ingeniería civil o de sistemas como requisito obligatorio.
+- Servicio al cliente y experiencia del cliente: 25–35 (Geotech: líder de servicio al cliente; Arena 57; PC Tronic postventa B2B).
+- Comercial, ventas B2B y cuentas clave: 18–30 (Geotech: consecución de clientes; Arena 57: mercadeo; Coca-Cola: CAV de preventa).
+  Bajar si piden trayectoria demostrada con cuotas de venta o un sector muy específico.
+- Administrativo y gerencia general de sede: 22–35 (presupuestos, gestión humana y procesos en GRAM; P&G en Banasan).
+- Compras y abastecimiento: 25–35 (negociación con proveedores y ahorros del 12 % al 26 % en fletes).
+- Producción, planta, mejora continua y procesos: 18–32 (Lean Six Sigma Green Belt; sincronización de producción y despacho
+  en ES). Bajar si exigen experiencia directa como gerente de planta, o química o calidad (BPM, HACCP).
 
 ## 5. Seguridad y buen juicio
 

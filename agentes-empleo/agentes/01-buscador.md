@@ -27,6 +27,11 @@ Lee primero `agentes/00-comun.md` y haz la preparación.
      agroindustria, consumo masivo, Santa Marta, etc.).
    - Consultoras: Michael Page, Hays, PageGroup, Adecco Professional, ManpowerGroup Experis, Korn Ferry,
      Spencer Stuart (ofertas de logística y operaciones en Colombia).
+   - **Otras vertientes de la ingeniería industrial** (rota 2 o 3 por ejecución): `"gerente de proyectos" vacante
+     Barranquilla`, `"gerente comercial" OR "director comercial" vacante Costa Caribe`, `"gerente de servicio al
+     cliente" vacante Colombia`, `"gerente administrativo" Barranquilla OR Cartagena vacante`, `"gerente de planta"
+     OR "gerente de producción" vacante Atlántico`, `"gerente de compras" vacante Colombia`. El script ya cubre
+     estos cargos en los cuatro portales.
    - **Fuera de Colombia** (2 o 3 búsquedas por ejecución, rotando países): ofertas que patrocinen visa o
      acepten candidatos extranjeros, por ejemplo `"operations manager" "visa sponsorship" logistics Latin
      America`, `gerente de logística vacante Panamá OR "República Dominicana" OR Perú 2026`, `"logistics

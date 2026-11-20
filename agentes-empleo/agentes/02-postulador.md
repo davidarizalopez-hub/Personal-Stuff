@@ -58,6 +58,16 @@ Lee primero `agentes/00-comun.md` y haz la preparación (incluye leer el perfil 
      - `experiencia`: todos los cargos, en orden cronológico inverso. En los relevantes deja de 4 a 6 viñetas
        reordenadas por relevancia; en los menos relevantes, 2 o 3.
      - Fechas siempre MM/AAAA. No uses tablas, columnas, íconos ni imágenes (la plantilla ya es ATS).
+     - **Según el área de la oferta**, prioriza estos hechos reales (de `cv_base` y de
+       `perfil_maestro.detalle_otras_experiencias`):
+       - Proyectos: PC Tronic primero en logros (7 proyectos, 95 % a tiempo, $900 MM, margen +18 %) y metodologías (SCRUM, Agile, híbrido).
+       - Comercial / ventas / cuentas clave: Geotech (consecución de clientes, planes de servicio y venta), PC Tronic (relación B2B y
+         postventa), Coca-Cola (CAV de preventa, P&G de concesionarios); agrega Arena 57 como experiencia con sus logros.
+       - Servicio al cliente: Geotech (líder de servicio al cliente y PQR), Arena 57, OTIF y penalidades −80 % en ES.
+       - Administrativo / gerencia general: presupuestos (USD 2 M/mes, $900 MM), gestión humana y procesos (GRAM administrativo),
+         P&G en superávit, relación sindical.
+       - Producción / mejora continua: sincronización de producción, almacenamiento y despacho en ES, Lean Six Sigma Green Belt, 5S, KPIs.
+       Nunca afirmes cuotas de venta, certificaciones (PMP, ISO) ni cargos de planta que no estén en el perfil.
      - **Oferta fuera de Colombia:** `informacion_adicional` = `perfil_maestro.permiso_trabajo.texto_cv` y
        `contacto.ubicacion` = "Barranquilla, Colombia · Disponible para reubicación internacional". En
        ofertas de Colombia no pongas esa sección.

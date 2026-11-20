@@ -1,7 +1,8 @@
 # Agentes de búsqueda de empleo
 
-Cuatro agentes programados en Claude Code (sesiones en la nube) que buscan empleo directivo en logística,
-transporte y operaciones (prioridad Colombia y Costa Norte; también remoto y otros países), adaptan la hoja de vida en formato ATS a cada oferta, la envían, y
+Cuatro agentes programados en Claude Code (sesiones en la nube) que buscan empleo directivo en todas las
+vertientes de la ingeniería industrial: logística, operaciones, proyectos, administrativo, comercial, servicio al
+cliente, producción y compras (prioridad Colombia y Costa Norte; también remoto y otros países), adaptan la hoja de vida en formato ATS a cada oferta, la envían, y
 cada mañana entregan un resumen con lo que hay que hacer ese día.
 
 | Agente | Horario (Bogotá) | Qué hace | Instrucciones |
