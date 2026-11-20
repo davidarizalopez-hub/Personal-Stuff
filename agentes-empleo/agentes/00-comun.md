@@ -74,6 +74,7 @@ Prioridad: **A** ≥ 75, **B** 60–74, **C** < 60 (no se postula, solo queda re
 | `postulaciones/` | `registro_postulaciones_AAAA-MM-DD_HHMM.json` (historial completo, el más reciente manda) | Postulador |
 | `CV adaptados/` | `CV_David_Ariza_<Empresa>_<Cargo>.pdf` y `.docx` | Postulador |
 | `linkedin/` | `LinkedIn_AAAA-MM-DD` (Google Doc con invitaciones, publicación y mejoras del perfil) | LinkedIn |
+| `Vacantes LinkedIn (sube aquí las capturas)/` | Capturas de publicaciones de vacantes que sube David; las ya atendidas pasan a `procesadas/` | David / Postulador |
 
 Para subir archivos de datos usa `create_file` con `disableConversionToGoogleType: true` y
 `contentMimeType: "text/plain"` (así los demás agentes los pueden descargar intactos con `download_file_content`).

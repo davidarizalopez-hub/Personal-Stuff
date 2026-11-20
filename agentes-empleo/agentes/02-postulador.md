@@ -89,6 +89,25 @@ Lee primero `agentes/00-comun.md` y haz la preparación (incluye leer el perfil 
 5. **Canal portal:** registra la entrada con `estado: lista_para_portal`, la URL de la oferta y los
    enlaces del CV. El Resumen matutino se los presenta a David para que aplique.
 
+5b. **Vacantes de publicaciones de LinkedIn (capturas que sube David).** En `CONFIG.CARPETA_RAIZ` está la
+   carpeta "Vacantes LinkedIn (sube aquí las capturas)" (búscala por título). Revisa los archivos que haya
+   dentro (imágenes, PDF o texto), excepto la subcarpeta "procesadas":
+   - Lee cada uno: `read_file_content` (extrae el texto de imágenes y PDF). Si no basta, descárgalo con
+     `download_file_content` y mira la imagen con la herramienta Read. Extrae: quién publica (persona y
+     empresa), cargo, ciudad, requisitos y funciones declarados en la publicación, salario y contrato si
+     los dicen, el **correo** para enviar la hoja de vida, el asunto que pidan y la fecha de publicación.
+   - Valida: que sea en Colombia (o remoto), que el cargo encaje con el perfil (puntaje de `00-comun.md`;
+     si salario o contrato no se dicen, se acepta), que no sea sospechosa y que David no haya escrito ya a
+     ese correo o empresa (Gmail `in:sent`). Si no hay correo en la publicación, regístrala como
+     `lista_para_portal` con la nota "publicación sin correo" para que David responda por LinkedIn.
+   - Prepara el CV ATS adaptado a lo que dice la publicación (mismas reglas del paso 3) y envía el correo
+     con el formato del paso 4, con estas particularidades: menciona que viste la publicación en LinkedIn
+     (y de quién, si se sabe); responde punto por punto a los requisitos y declaraciones de la publicación
+     con hechos reales del perfil maestro; usa el asunto que pida la publicación, si pide uno. Cuenta para el
+     tope diario de 8 correos.
+   - Registra la entrada con `canal: correo_linkedin_post`, el ID del archivo de la captura en `notas`, y
+     mueve el archivo a la subcarpeta "procesadas" (créala si no existe) con `update_file` (`parentId`).
+
 6. **Seguimiento** (máximo 5 por día). En cada entrada con `estado: enviada` y 5 o más días hábiles desde
    el envío, sin seguimiento previo:
    - Lee el hilo con `get_thread`. Si alguien de la empresa respondió, cambia el estado a `respondio`

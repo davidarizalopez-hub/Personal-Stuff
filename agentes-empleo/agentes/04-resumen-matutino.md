@@ -44,11 +44,17 @@ escribirle", "aplicar hoy en el portal con el CV adaptado", "preparar entrevista
   2. **Números del día:** correos enviados (24 horas y en total), CV listos para portal, ofertas nuevas
      revisadas y válidas, respuestas, y días que faltan para el 1 de diciembre.
   3. **Ofertas destacadas para seguimiento** (la lista de arriba).
-  4. **Aplica hoy en portales:** las postulaciones `lista_para_portal`, con enlace a la oferta y al CV ATS
-     adaptado (máximo 6, primero las de prioridad A). Indica: "Al aplicar, sube el PDF adaptado y
-     responde a este correo con 'aplicada <empresa>' para que lo registre". Como no puedes leer esa
-     respuesta en tiempo real, en la ejecución siguiente busca en Gmail los mensajes de David con
-     `aplicada` y actualiza el estado a `aplicada_por_david` en un nuevo `registro_postulaciones_*`.
+  4. **Aplica hoy en portales:** las postulaciones `lista_para_portal` (máximo 6, primero las de prioridad A),
+     numeradas. Cada una con un enlace **"Ver oferta y postularme"** a la URL de la oferta (no al CV) y el
+     nombre del PDF que debe adjuntar. **Adjunta al correo los PDF** de esas ofertas (descárgalos de
+     `CONFIG.CARPETA_CV` con `download_file_content` y adjúntalos con referencia `sha256:<hash>:<ruta>`), para
+     que David los tenga a mano al postularse desde el celular. Indica: "Al aplicar, sube el PDF adaptado y
+     responde a este correo con 'aplicada' y los números (por ejemplo, 'aplicada 1, 2, 5')". En cada
+     ejecución busca en Gmail las respuestas de David que digan `aplicada` (`from:me aplicada newer_than:7d`),
+     abre el hilo con `get_thread` para saber a qué oferta corresponde cada número del correo original, y
+     actualiza esas entradas a `aplicada_por_david` en un nuevo `registro_postulaciones_*`.
+     Recuérdale también la carpeta "Vacantes LinkedIn (sube aquí las capturas)" del Drive, y cuántas capturas
+     procesó el Postulador desde el último resumen.
   5. **LinkedIn hoy (15 minutos):** la mejora del perfil del día (resumida), cuántas invitaciones enviar
      con el enlace al documento del día, y la publicación o los comentarios sugeridos.
   6. **Qué corregir del perfil de LinkedIn** (de 3 a 5 puntos priorizados, acumulando lo pendiente).

@@ -6,6 +6,14 @@
 
 Lee primero `agentes/00-comun.md` y haz la preparación.
 
+## Vacantes publicadas en el feed
+
+Si David ve en su feed una publicación de vacante con un correo para enviar la hoja de vida, la captura y la
+sube a la carpeta "Vacantes LinkedIn (sube aquí las capturas)" del Drive. El Postulador se encarga de
+escribirle a ese correo con el CV adaptado. En el documento del día, recuérdale esa carpeta y sugiérele
+buscar en LinkedIn (Publicaciones, filtradas por "Últimas") términos como `#vacante logística Barranquilla`,
+`"envía tu hoja de vida" gerente logística` o `#empleo supply chain Colombia`.
+
 ## Lo que este agente NO hace (y por qué)
 
 No inicia sesión en LinkedIn, no envía invitaciones, no da "me gusta" ni publica por su cuenta. Las
