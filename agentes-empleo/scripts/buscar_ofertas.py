@@ -133,6 +133,9 @@ def contrato_de(t):
     return "no especificado"
 
 
+NO_PATROCINIO = re.compile(r"(not (be )?(able to )?sponsor|no (visa )?sponsorship|without (the need for )?(visa )?sponsorship|"
+    r"must be (legally )?authorized to work|authorized to work in the (us|united states)|u\.?s\.? citizen|"
+    r"green card|security clearance|no patrocina|sin patrocinio|residencia (legal|vigente)|permiso de trabajo vigente)")
 EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 EMAIL_IGNORAR = re.compile(r"(computrabajo|elempleo|magneto365|linkedin|sentry|example|wixpress|noreply|no-reply)", re.I)
 
@@ -284,7 +287,6 @@ def linkedin():
     pares = [(kw, loc) for kw in LI_KEYWORDS
              for loc in ["Colombia", "Barranquilla, Atlántico, Colombia", "Cartagena, Bolívar, Colombia", "Santa Marta, Magdalena, Colombia"]]
     pares += [(kw, loc) for kw in LI_KEYWORDS_INTL for loc in LI_LOCS_INTL]
-    pares += [(kw, "América Latina") for kw in LI_KEYWORDS_INTL]
     for kw, loc in pares:
         if True:
             q = urllib.parse.urlencode({"keywords": kw, "location": loc, "f_TPR": "r1209600", "start": 0})
@@ -346,12 +348,22 @@ def clasificar(o):
     o["costa_norte"] = any(k in norm(o.get("ciudad", "") + " " + o.get("titulo", "")) for k in COSTA)
     ciudad_n = norm(o.get("ciudad", ""))
     o["fuera_de_colombia"] = o.get("portal") == "LinkedIn" and bool(ciudad_n) and "colombia" not in ciudad_n
+    motivo_ext = ""
+    if o["fuera_de_colombia"]:
+        desc_n = norm(o.get("descripcion", ""))
+        if re.search(r"\b(brasil|brazil)\b", ciudad_n):
+            motivo_ext = "Brasil: exige portugués"
+        elif NO_PATROCINIO.search(desc_n):
+            motivo_ext = "no patrocina visa / exige autorización de trabajo vigente"
     sin_salario_no_directivo = o["salario_estado"] == "no publicado" and not DIRECTIVO.search(norm(o.get("titulo", "")))
-    o["descartada"] = o["salario_estado"] == "bajo" or o["contrato_estado"] == "no cumple" or sin_salario_no_directivo
+    if o.get("fuera_de_colombia") and o["contrato_estado"] == "confirmar":
+        o["contrato_estado"] = "confirmar"  # en el exterior el contrato rara vez se publica
+    o["descartada"] = o["salario_estado"] == "bajo" or o["contrato_estado"] == "no cumple" or sin_salario_no_directivo or bool(motivo_ext)
     o["motivo_descarte"] = ", ".join(x for x in [
         f"salario {o.get('salario_texto')}" if o["salario_estado"] == "bajo" else "",
         f"contrato {c}" if o["contrato_estado"] == "no cumple" else "",
-        "cargo no directivo sin salario publicado" if sin_salario_no_directivo else ""] if x)
+        "cargo no directivo sin salario publicado" if sin_salario_no_directivo else "",
+        motivo_ext] if x)
     return o
 
 
@@ -383,8 +395,13 @@ def main():
     candidatas = [o for k, o in todas.items() if k not in vistas and titulo_relevante(o.get("titulo", ""))
                   and not salario_listado_bajo(o)]
     # Prioriza Costa Norte primero para los detalles
-    candidatas.sort(key=lambda o: not any(k in norm(o.get("ciudad", "") + " " + o["titulo"]) for k in COSTA))
-    candidatas = candidatas[: a.max_detalles]
+    def es_ext(o):
+        c = norm(o.get("ciudad", ""))
+        return o.get("portal") == "LinkedIn" and bool(c) and "colombia" not in c
+    candidatas.sort(key=lambda o: (es_ext(o), not any(k in norm(o.get("ciudad", "") + " " + o["titulo"]) for k in COSTA)))
+    nac = [o for o in candidatas if not es_ext(o)]
+    ext = [o for o in candidatas if es_ext(o) and not re.search(r"\b(brasil|brazil)\b", norm(o.get("ciudad", "")))][:40]
+    candidatas = (nac + ext)[: a.max_detalles]
     print(f"[filtro] {len(candidatas)} nuevas con cargo directivo relevante (se revisan en detalle)", file=sys.stderr, flush=True)
 
     def detalles_de(portal):
