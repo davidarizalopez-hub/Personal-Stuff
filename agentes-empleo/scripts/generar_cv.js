@@ -74,6 +74,7 @@ ${cv.herramientas ? `<p>Herramientas: ${e(lista(cv.herramientas))}</p>` : ''}
 ${cv.metodologias ? `<p>Metodologías: ${e(lista(cv.metodologias))}</p>` : ''}
 
 ${cv.idiomas ? `<h2>Idiomas</h2><p>${e(lista(cv.idiomas))}</p>` : ''}
+${cv.informacion_adicional ? `<h2>Información adicional</h2><p>${e(lista(cv.informacion_adicional))}</p>` : ''}
 ${cv.nota_final ? `<p style="margin-top:8px">${e(cv.nota_final)}</p>` : ''}
 </body></html>`;
 

@@ -27,6 +27,12 @@ Lee primero `agentes/00-comun.md` y haz la preparación.
      agroindustria, consumo masivo, Santa Marta, etc.).
    - Consultoras: Michael Page, Hays, PageGroup, Adecco Professional, ManpowerGroup Experis, Korn Ferry,
      Spencer Stuart (ofertas de logística y operaciones en Colombia).
+   - **Fuera de Colombia** (2 o 3 búsquedas por ejecución, rotando países): ofertas que patrocinen visa o
+     acepten candidatos extranjeros, por ejemplo `"operations manager" "visa sponsorship" logistics Latin
+     America`, `gerente de logística vacante Panamá OR "República Dominicana" OR Perú 2026`, `"logistics
+     manager" relocation Colombia candidates`. El script ya trae las de LinkedIn en México, Panamá, Perú,
+     Chile, Ecuador, República Dominicana, Costa Rica, Guatemala, España y Estados Unidos
+     (`fuera_de_colombia: true`). Descarta las que exijan residencia o permiso de trabajo sin patrocinio.
    Abre una oferta solo si el resultado sugiere que cumple los criterios. Para leerla usa `curl`
    (los portales permitidos son co.computrabajo.com, www.elempleo.com, www.magneto365.com, torre.ai
    y www.linkedin.com) o el agente `web-fetch` para otros sitios. No repitas IDs de `vistas.txt`; para

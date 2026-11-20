@@ -58,6 +58,9 @@ Lee primero `agentes/00-comun.md` y haz la preparación (incluye leer el perfil 
      - `experiencia`: todos los cargos, en orden cronológico inverso. En los relevantes deja de 4 a 6 viñetas
        reordenadas por relevancia; en los menos relevantes, 2 o 3.
      - Fechas siempre MM/AAAA. No uses tablas, columnas, íconos ni imágenes (la plantilla ya es ATS).
+     - **Oferta fuera de Colombia:** `informacion_adicional` = `perfil_maestro.permiso_trabajo.texto_cv` y
+       `contacto.ubicacion` = "Barranquilla, Colombia · Disponible para reubicación internacional". En
+       ofertas de Colombia no pongas esa sección.
    - Genera los dos formatos y verifica que el texto se lea en orden y quepa en 2 páginas:
      ```bash
      cd /tmp/trabajo
@@ -75,8 +78,9 @@ Lee primero `agentes/00-comun.md` y haz la preparación (incluye leer el perfil 
    - Cuerpo en español, cordial y directo, de 120 a 170 palabras, sin emojis:
      saludo ("Respetado equipo de selección de <Empresa>:" o el nombre del reclutador si aparece) →
      a qué cargo se postula y dónde vio la oferta → 3 viñetas con hechos del perfil que responden a los
-     requisitos → disponibilidad para trasladarse si la vacante no está en Barranquilla → invitación a
-     conversar → firma: David Ariza López, Ingeniero Industrial, Esp. en Logística Empresarial,
+     requisitos → disponibilidad para trasladarse si la vacante no está en Barranquilla (si es fuera de
+     Colombia: "Soy de nacionalidad colombiana y tengo plena disponibilidad para trasladarme a <ciudad>; para
+     ello requeriría el patrocinio del permiso de trabajo") → invitación a conversar → firma: David Ariza López, Ingeniero Industrial, Esp. en Logística Empresarial,
      +57 300 274 0653, linkedin.com/in/davidarizalpz.
      Si la oferta pide aspiración salarial, escribe: "Mi aspiración salarial es superior a $9.000.000
      mensuales, negociable según el paquete integral." Si no la pide, no menciones salario.
@@ -96,8 +100,10 @@ Lee primero `agentes/00-comun.md` y haz la preparación (incluye leer el perfil 
      `download_file_content` y mira la imagen con la herramienta Read. Extrae: quién publica (persona y
      empresa), cargo, ciudad, requisitos y funciones declarados en la publicación, salario y contrato si
      los dicen, el **correo** para enviar la hoja de vida, el asunto que pidan y la fecha de publicación.
-   - Valida: que sea en Colombia (o remoto), que el cargo encaje con el perfil (puntaje de `00-comun.md`;
-     si salario o contrato no se dicen, se acepta), que no sea sospechosa y que David no haya escrito ya a
+   - Valida: cualquier país sirve (fuera de Colombia aplica la regla de permiso de trabajo de `00-comun.md`
+     y la conversión de salario); que el cargo encaje con el perfil (puntaje de `00-comun.md`; si salario
+     o contrato no se dicen, se acepta). Si David subió la captura, asume que le interesa aunque el salario
+     convertido quede por debajo de la meta, pero anótalo en el registro y en el resumen; que no sea sospechosa y que David no haya escrito ya a
      ese correo o empresa (Gmail `in:sent`). Si no hay correo en la publicación, regístrala como
      `lista_para_portal` con la nota "publicación sin correo" para que David responda por LinkedIn.
    - Prepara el CV ATS adaptado a lo que dice la publicación (mismas reglas del paso 3) y envía el correo

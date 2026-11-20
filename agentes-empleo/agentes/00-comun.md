@@ -41,9 +41,18 @@ mkdir -p /tmp/trabajo && cd /tmp/trabajo
   si es un cargo directivo (gerente, director, head, jefe nacional) en una empresa mediana o grande.
 - Contrato: **término indefinido**. Se descartan obra o labor, prestación de servicios, temporal y término
   fijo. Si la oferta no dice el tipo de contrato, se acepta con la marca "confirmar contrato".
-- Ubicación: cualquier ciudad de Colombia (el candidato puede trasladarse). **Prioridad Costa Norte**:
-  Barranquilla y su área metropolitana, Cartagena y Santa Marta; después Riohacha, Valledupar, Montería y
-  Sincelejo.
+- Ubicación: **cualquier país** (confirmado por David el 19-nov-2026). Orden de prioridad: 1) **Costa Norte**
+  de Colombia (Barranquilla y su área metropolitana, Cartagena y Santa Marta; después Riohacha, Valledupar,
+  Montería y Sincelejo); 2) resto de Colombia; 3) remoto; 4) otros países.
+- Fuera de Colombia: convierte el salario a COP con la tasa del día (búscala) y exige el equivalente a más de
+  $9.000.000 COP brutos mensuales; si la oferta da salario neto, estima el bruto. Si el costo de vida es
+  mucho mayor que en Barranquilla, adviértelo. El tipo de contrato se evalúa según la figura equivalente del
+  país (contrato por tiempo indeterminado, *permanent*, *full-time employee*).
+- **Permiso de trabajo:** David solo tiene nacionalidad colombiana y fuera de Colombia necesita visa de
+  trabajo patrocinada. En toda postulación fuera de Colombia, el CV lleva `informacion_adicional` con
+  `perfil_maestro.permiso_trabajo.texto_cv`, la ubicación del contacto dice "Barranquilla, Colombia ·
+  Disponible para reubicación internacional", y el correo lo dice en una frase. Nunca afirmes que tiene
+  permiso de trabajo en otro país. Si la oferta exige residencia o permiso vigente sin patrocinio, no postules.
 - Cargos: los de `preferencias_busqueda.cargos_objetivo` del perfil.
 
 ## 4. Puntaje de afinidad (0 a 100)
@@ -52,7 +61,7 @@ mkdir -p /tmp/trabajo && cd /tmp/trabajo
 |---|---|
 | Afinidad del cargo y de las funciones con la experiencia real del perfil | 0–45 |
 | Salario (cumple = 20, no publicado y directivo = 10) | 0–20 |
-| Ubicación (Costa Norte = 20, Bogotá, Medellín o Cali = 10, otra = 5) | 0–20 |
+| Ubicación (Costa Norte = 20, Bogotá, Medellín o Cali = 10, otra de Colombia o remoto = 8, otro país = 5; otro país que patrocina visa = 8) | 0–20 |
 | Contrato (indefinido = 10, sin especificar = 5) | 0–10 |
 | Sector afín (agroindustria, consumo masivo, puertos, transporte, manufactura, construcción) | 0–5 |
 

@@ -115,6 +115,9 @@ def main():
     if cv.get("idiomas"):
         titulo_seccion("Idiomas")
         doc.add_paragraph(lista(cv["idiomas"]))
+    if cv.get("informacion_adicional"):
+        titulo_seccion("Información adicional")
+        doc.add_paragraph(lista(cv["informacion_adicional"]))
     if cv.get("nota_final"):
         doc.add_paragraph(cv["nota_final"])
 

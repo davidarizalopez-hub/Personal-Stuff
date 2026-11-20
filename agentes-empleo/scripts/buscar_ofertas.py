@@ -27,6 +27,11 @@ LI_KEYWORDS = ["gerente logistica", "director logistica", "gerente operaciones",
                "director operaciones", "director transporte", "supply chain manager",
                "jefe transporte", "director proyectos", "gerente cadena abastecimiento",
                "logistics manager"]
+# Fuera de Colombia (David confirmó el 19-nov-2026 que busca en todos los países; requiere visa patrocinada)
+LI_KEYWORDS_INTL = ["gerente de logistica", "gerente de operaciones", "logistics manager",
+                    "supply chain manager", "operations manager", "director de logistica"]
+LI_LOCS_INTL = ["México", "Panamá", "Perú", "Chile", "Ecuador", "República Dominicana", "Costa Rica",
+                "Guatemala", "España", "Estados Unidos"]
 CT_DEPTOS = ["", "atlantico", "bolivar", "magdalena"]
 EE_CIUDADES = ["", "barranquilla", "cartagena", "santa-marta"]
 
@@ -276,8 +281,12 @@ def magneto_detalle(o):
 # ---------------------------------------------------------------- LinkedIn (ofertas públicas, sin iniciar sesión)
 def linkedin():
     out = {}
-    for kw in LI_KEYWORDS:
-        for loc in ["Colombia", "Barranquilla, Atlántico, Colombia", "Cartagena, Bolívar, Colombia", "Santa Marta, Magdalena, Colombia"]:
+    pares = [(kw, loc) for kw in LI_KEYWORDS
+             for loc in ["Colombia", "Barranquilla, Atlántico, Colombia", "Cartagena, Bolívar, Colombia", "Santa Marta, Magdalena, Colombia"]]
+    pares += [(kw, loc) for kw in LI_KEYWORDS_INTL for loc in LI_LOCS_INTL]
+    pares += [(kw, "América Latina") for kw in LI_KEYWORDS_INTL]
+    for kw, loc in pares:
+        if True:
             q = urllib.parse.urlencode({"keywords": kw, "location": loc, "f_TPR": "r1209600", "start": 0})
             h = get("https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?" + q)
             for c in re.findall(r'<div class="base-card.*?</li>', h, re.S) or re.findall(r"<li>.*?</li>", h, re.S):
@@ -335,6 +344,8 @@ def clasificar(o):
     c = o.get("contrato", "no especificado")
     o["contrato_estado"] = "cumple" if c == "indefinido" else ("confirmar" if c == "no especificado" else "no cumple")
     o["costa_norte"] = any(k in norm(o.get("ciudad", "") + " " + o.get("titulo", "")) for k in COSTA)
+    ciudad_n = norm(o.get("ciudad", ""))
+    o["fuera_de_colombia"] = o.get("portal") == "LinkedIn" and bool(ciudad_n) and "colombia" not in ciudad_n
     sin_salario_no_directivo = o["salario_estado"] == "no publicado" and not DIRECTIVO.search(norm(o.get("titulo", "")))
     o["descartada"] = o["salario_estado"] == "bajo" or o["contrato_estado"] == "no cumple" or sin_salario_no_directivo
     o["motivo_descarte"] = ", ".join(x for x in [
@@ -394,7 +405,7 @@ def main():
         for r in ex.map(detalles_de, [n for n, _ in fuentes]):
             res.extend(r)
     validas = [o for o in res if not o["descartada"]]
-    validas.sort(key=lambda o: (not o["costa_norte"], o["salario_estado"] != "cumple", o["contrato_estado"] != "cumple"))
+    validas.sort(key=lambda o: (not o["costa_norte"], o.get("fuera_de_colombia", False), o["salario_estado"] != "cumple", o["contrato_estado"] != "cumple"))
     salida = dict(generado=datetime.now(timezone.utc).isoformat(), total_listados=len(todas),
                   candidatas_nuevas=len(candidatas), revisadas=len(res),
                   ids_procesados=sorted({o["id"] for o in res} | {o["id"] for o in candidatas}),
