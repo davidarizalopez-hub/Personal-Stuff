@@ -31,6 +31,21 @@ Lee primero `agentes/00-comun.md` y haz la preparación (incluye leer el perfil 
    Quédate con las de prioridad A y B que no estén en el historial. Antes de postular, vuelve a abrir la URL:
    si la oferta ya no existe o cerró, márcala como `descartada` con esa nota.
 
+   **¿Ya se postuló David?** Antes de preparar el CV o enviar algo, verifica en Gmail que David no se
+   haya postulado ya a esa oferta o a esa empresa:
+   - Confirmaciones de los portales: `newer_than:90d (from:elempleo OR from:magneto365 OR from:computrabajo
+     OR from:linkedin.com OR from:torre.ai) (<palabra clave del cargo> OR "<empresa>")`, buscando textos como
+     "te postulaste", "aplicaste", "tu postulación", "tu hoja de vida fue enviada" o "application sent".
+   - Correos que David envió a la empresa: `in:sent newer_than:60d (<dominio del correo de la oferta> OR "<empresa>")`.
+   - Si la oferta en el portal muestra "Ya aplicaste" o "Postulado" (por ejemplo, la etiqueta
+     `applied-offer-tag` visible en Computrabajo), también cuenta como postulada.
+   Si ya se postuló, no hagas nada más con esa oferta: regístrala con `estado: aplicada_por_david` y la
+   nota de dónde lo detectaste. Si la empresa es "Confidencial" y no hay forma de saberlo, sigue adelante.
+
+   **Ofertas falsas:** descarta y avisa en el registro (`estado: descartada`, nota "posible estafa") las
+   que piden pagos, entrevistas solo por chat o WhatsApp, o vienen de dominios desconocidos con mensajes
+   genéricos ("buscamos asistentes, supervisores y gerentes", "vimos su currículum en la plataforma").
+
 3. **CV adaptado (ATS) para cada candidata.** Orden: primero prioridad A, primero Costa Norte, primero canal correo.
    Por ejecución: hasta 6 por correo (respetando el tope diario) y hasta 6 por portal.
    - Copia `perfil_maestro.json → cv_base` en `/tmp/trabajo/cv_<id>.json` y adáptalo:

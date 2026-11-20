@@ -16,6 +16,12 @@ Lee primero `agentes/00-comun.md` y haz la preparación.
    - `newer_than:2d -from:me (entrevista OR "proceso de selección" OR postulación OR "hoja de vida" OR vacante OR candidato)`.
    - Notificaciones de portales: `newer_than:2d (from:computrabajo OR from:elempleo OR from:magneto365 OR from:linkedin OR from:torre)`
      con mensajes como "tu hoja de vida fue vista", "una empresa vio tu perfil" o "avanzaste en el proceso".
+   - **Postulaciones que David hizo por su cuenta:** confirmaciones de los portales ("te postulaste",
+     "aplicaste", "tu postulación fue enviada", "application sent"). Cruza cada una con el registro: si
+     corresponde a una oferta `lista_para_portal`, márcala `aplicada_por_david`; si no estaba registrada,
+     agrégala con ese estado. Así ningún agente vuelve a postular a la misma oferta.
+   - **Posibles estafas:** correos que ofrecen entrevistas o empleo desde dominios desconocidos, con textos
+     genéricos o que piden pagos o datos sensibles. Adviértelo en "Lo urgente hoy" para que David no responda.
    No respondas ningún correo: solo resume e indica la acción sugerida.
 3. **Ofertas:** los `ofertas_*.json` de las últimas 24 horas (nuevas) y de los últimos 10 días (seguimiento).
 4. **LinkedIn:** el documento `LinkedIn_<hoy>` (o el más reciente) de `CONFIG.CARPETA_LINKEDIN`.
