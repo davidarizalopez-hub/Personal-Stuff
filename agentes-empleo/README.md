@@ -1,12 +1,12 @@
 # Agentes de búsqueda de empleo
 
 Cuatro agentes programados en Claude Code (sesiones en la nube) que buscan empleo directivo en logística,
-transporte y operaciones en Colombia, adaptan la hoja de vida en formato ATS a cada oferta, la envían, y
+transporte y operaciones (prioridad Colombia y Costa Norte; también remoto y otros países), adaptan la hoja de vida en formato ATS a cada oferta, la envían, y
 cada mañana entregan un resumen con lo que hay que hacer ese día.
 
 | Agente | Horario (Bogotá) | Qué hace | Instrucciones |
 |---|---|---|---|
-| 1. Buscador | todos los días, 05:13 · 13:13 · 19:13 | Recorre Computrabajo, Elempleo, Magneto, LinkedIn (ofertas públicas) y Torre/headhunters por búsqueda web; filtra por salario > $9M, contrato indefinido y prioridad Costa Norte; puntúa la afinidad | [`agentes/01-buscador.md`](agentes/01-buscador.md) |
+| 1. Buscador | todos los días, 05:13 · 13:13 · 19:13 | Recorre Computrabajo, Elempleo, Magneto, LinkedIn (ofertas públicas de Colombia, Latinoamérica, España y EE. UU.) y Torre/headhunters por búsqueda web; filtra por salario > $9M COP o su equivalente, contrato indefinido y prioridad Costa Norte; puntúa la afinidad | [`agentes/01-buscador.md`](agentes/01-buscador.md) |
 | 2. Postulador | lunes a viernes, 07:37 · 14:37 | Genera el CV ATS adaptado (PDF + Word), lo envía si la oferta publica un correo (máx. 8/día), deja listo el CV para portales y hace seguimiento a los 5 días hábiles | [`agentes/02-postulador.md`](agentes/02-postulador.md) |
 | 3. LinkedIn | todos los días, 06:07 | Plan de 15 minutos: 10 personas para conectar con notas listas, publicación o comentarios, y una mejora del perfil por día. No automatiza la cuenta | [`agentes/03-linkedin.md`](agentes/03-linkedin.md) |
 | 4. Resumen matutino | todos los días, 06:41 | Correo con correos enviados, ofertas para seguimiento, respuestas de empresas, postulaciones por portal pendientes y qué corregir en LinkedIn | [`agentes/04-resumen-matutino.md`](agentes/04-resumen-matutino.md) |
