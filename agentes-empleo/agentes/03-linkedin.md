@@ -17,8 +17,10 @@ arriesga. El agente prepara todo y David lo ejecuta con unos pocos toques.
 
 1. **Contexto.** Lee el `ofertas_*.json` más reciente (empresas con ofertas de prioridad A y B) y el
    documento `LinkedIn_*` del día anterior en `CONFIG.CARPETA_LINKEDIN`, para no repetir personas ni temas.
-   Si en `CONFIG.CARPETA_RAIZ` existe un PDF cuyo título contenga "Perfil LinkedIn" (la exportación del
-   perfil con "Más → Guardar en PDF"), léelo para auditar el perfil real. Si no existe, audita a partir del
+   Busca en `CONFIG.CARPETA_RAIZ` el PDF más reciente cuyo título contenga "Perfil" y "Linkedin" (sin
+   importar mayúsculas; hoy es `Perfil Linkedin.pdf`, la exportación con "Más → Guardar en PDF") y léelo con
+   `read_file_content` para auditar el perfil real. Compáralo con el perfil maestro y señala **toda
+   diferencia** de cargos, fechas, cifras o idiomas: los reclutadores comparan CV y LinkedIn. Si no existe, audita a partir del
    perfil maestro y recuérdale a David que lo exporte.
 
 2. **Personas para conectar hoy (10).** Con WebSearch, busca perfiles públicos (`site:linkedin.com/in`) de:
