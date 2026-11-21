@@ -73,7 +73,7 @@ ${parrafos(k.parrafos_finales)}
   const palabras = [k.saludo, ...(k.parrafos || []), k.vinetas_titulo, ...(k.vinetas || []), ...(k.parrafos_finales || [])]
     .filter(Boolean).join(' ').split(/\s+/).length;
   console.log(`Páginas: ${paginas} (escala ${escala}) · ${palabras} palabras en el cuerpo`);
-  if (paginas > 1) console.warn('AVISO: la carta supera una página; acórtala (meta: 250 a 380 palabras).');
+  if (paginas > 1) console.warn('AVISO: la carta supera una página; acórtala (meta: 220 a 380 palabras).');
   await browser.close();
   console.log('PDF generado:', path.resolve(salida));
 })().catch(err => { console.error(err); process.exit(1); });

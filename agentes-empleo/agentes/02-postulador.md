@@ -23,10 +23,14 @@ Lee primero `agentes/00-comun.md` y haz la preparación (incluye leer el perfil 
    {"fecha": "AAAA-MM-DD HH:MM", "oferta_id": "", "empresa": "", "cargo": "", "ciudad": "", "url": "",
     "canal": "correo|portal", "correo_destino": "", "thread_id": "", "message_id": "",
     "cv_pdf_url": "", "cv_docx_url": "", "carta_pdf_url": "", "carta_docx_url": "", "puntaje": 0, "prioridad": "A|B",
-    "estado": "enviada|lista_para_portal|aplicada_por_david|seguimiento_enviado|respondio|entrevista|descartada",
+    "estado": "enviada|pendiente_envio|lista_para_portal|aplicada_por_david|seguimiento_enviado|respondio|entrevista|descartada",
     "seguimiento_fecha": "", "notas": ""}
    ```
    Cuenta cuántos correos de postulación y de seguimiento lleva hoy.
+   **Envíos pendientes:** las entradas con `estado: pendiente_envio` ya tienen CV y carta generados (se prepararon
+   cuando el tope diario estaba lleno). Envíalas primero, dentro del tope, con el formato del paso 4 y los PDF de
+   `cv_pdf_url` y `carta_pdf_url` (descárgalos con `download_file_content`); usa el asunto que indique `notas`.
+   Después cambia el estado a `enviada` y mueve la captura correspondiente a "procesadas".
 
 2. **Ofertas candidatas.** Lee los `ofertas_*.json` de `CONFIG.CARPETA_OFERTAS` de los últimos 3 días.
    Quédate con las de prioridad A y B que no estén en el historial. Antes de postular, vuelve a abrir la URL:
@@ -92,7 +96,7 @@ Lee primero `agentes/00-comun.md` y haz la preparación (incluye leer el perfil 
      nombre del reclutador si aparece en la oferta o publicación; si no, "Señores" / "Equipo de Selección" /
      empresa / ciudad; si la empresa es confidencial, "Equipo de Selección" y la ciudad), `referencia`
      ("Postulación al cargo de <cargo exacto de la oferta>").
-   - **Cuerpo de 250 a 380 palabras, una página:**
+   - **Cuerpo de 220 a 380 palabras, una página:**
      1. *Gancho* (2 o 3 líneas): el cargo, dónde vio la oferta y por qué ese reto en particular, citando algo
         concreto de la oferta (el sector, la región, el reto o el propósito que declara). No inventes datos de la
         empresa: usa solo lo que dice la oferta o información pública que hayas verificado.
