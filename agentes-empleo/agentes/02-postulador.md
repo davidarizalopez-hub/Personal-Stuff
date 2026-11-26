@@ -73,6 +73,10 @@ Lee primero `agentes/00-comun.md` y haz la preparación (incluye leer el perfil 
          P&G en superávit, relación sindical.
        - Producción / mejora continua: sincronización de producción, almacenamiento y despacho en ES, Lean Six Sigma Green Belt, 5S, KPIs.
        Nunca afirmes cuotas de venta, certificaciones (PMP, ISO) ni cargos de planta que no estén en el perfil.
+     - **Oferta en inglés:** pon `"idioma": "en"` en el JSON (los generadores cambian títulos y etiquetas) y redacta
+       todo el contenido en inglés. Parte del `cv_base_en_*` más reciente de `CONFIG.CARPETA_SISTEMA`: es la
+       traducción fiel del perfil maestro revisada con David. Adáptalo igual que el CV en español, sin agregar
+       hechos que no estén en el perfil maestro.
      - **Oferta fuera de Colombia:** `informacion_adicional` = `perfil_maestro.permiso_trabajo.texto_cv` y
        `contacto.ubicacion` = "Barranquilla, Colombia · Disponible para reubicación internacional". En
        ofertas de Colombia no pongas esa sección.

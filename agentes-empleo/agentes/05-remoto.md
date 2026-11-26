@@ -94,8 +94,8 @@ Este agente hace dos cosas:
      - `canal` es `portal`, o `correo` si la oferta publica un correo.
 
      El Postulador toma las A y B de todos los `ofertas_*.json`, así que también prepara el CV y la carta de
-     estas. Para ofertas en inglés usa la carta en inglés y, como el generador de CV es solo en español, anota
-     en `razon` «requiere CV en inglés».
+     estas. Para ofertas en inglés, el CV y la carta van en inglés (`"idioma": "en"`, a partir del
+     `cv_base_en_*` de `CONFIG.CARPETA_SISTEMA`).
    - **`vistas_remoto_AAAA-MM-DD_HHMM.txt`:** el `vistas_remoto.txt` actualizado por el script, más los IDs de
      los correos.
 

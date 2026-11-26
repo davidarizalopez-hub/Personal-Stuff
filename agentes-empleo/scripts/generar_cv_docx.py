@@ -57,6 +57,14 @@ def main():
         texto_con_negritas(p, t)
         p.paragraph_format.space_after = Pt(1)
 
+    en = cv.get("idioma") == "en"
+    L = dict(tel="Phone", mail="Email", ubi="Location", doc="Resume", perfil="Professional Summary", logros="Key Achievements",
+             comp="Core Competencies", exp="Professional Experience", otras="Other Experience", edu="Education",
+             hab="Technical Skills", herr="Tools", met="Methodologies", idi="Languages", info="Additional Information") if en else \
+        dict(tel="Teléfono", mail="Correo", ubi="Ubicación", doc="Hoja de vida", perfil="Perfil profesional", logros="Logros destacados",
+             comp="Competencias clave", exp="Experiencia laboral", otras="Otras experiencias", edu="Educación",
+             hab="Habilidades técnicas", herr="Herramientas", met="Metodologías", idi="Idiomas", info="Información adicional")
+
     h = doc.add_heading(cv["nombre"], level=1)
     for r in h.runs:
         r.font.name = "Arial"
@@ -68,25 +76,25 @@ def main():
     r.bold = True
     c = cv.get("contacto", {})
     contacto = " | ".join(x for x in [
-        c.get("telefono") and f"Teléfono: {c['telefono']}",
-        c.get("email") and f"Correo: {c['email']}",
+        c.get("telefono") and f"{L['tel']}: {c['telefono']}",
+        c.get("email") and f"{L['mail']}: {c['email']}",
         c.get("linkedin") and f"LinkedIn: {c['linkedin']}",
-        c.get("ubicacion") and f"Ubicación: {c['ubicacion']}"] if x)
+        c.get("ubicacion") and f"{L['ubi']}: {c['ubicacion']}"] if x)
     doc.add_paragraph(contacto)
 
-    titulo_seccion("Perfil profesional")
+    titulo_seccion(L["perfil"])
     texto_con_negritas(doc.add_paragraph(), cv.get("perfil", ""))
 
     if cv.get("logros_clave"):
-        titulo_seccion("Logros destacados")
+        titulo_seccion(L["logros"])
         for l in cv["logros_clave"]:
             vineta(l)
 
     if cv.get("competencias"):
-        titulo_seccion("Competencias clave")
+        titulo_seccion(L["comp"])
         doc.add_paragraph(lista(cv["competencias"]))
 
-    titulo_seccion("Experiencia laboral")
+    titulo_seccion(L["exp"])
     for x in cv.get("experiencia", []):
         p = doc.add_paragraph()
         p.paragraph_format.space_before = Pt(5)
@@ -99,29 +107,29 @@ def main():
             vineta(l)
 
     if cv.get("otras_experiencias"):
-        titulo_seccion("Otras experiencias")
+        titulo_seccion(L["otras"])
         for x in cv["otras_experiencias"]:
             vineta(f"**{x['cargo']}** | {x['empresa']} | {x['fechas']}")
 
-    titulo_seccion("Educación")
+    titulo_seccion(L["edu"])
     for x in cv.get("educacion", []):
         vineta(f"**{x['titulo']}** | {x['institucion']} | {x['anio']}")
 
-    titulo_seccion("Habilidades técnicas")
+    titulo_seccion(L["hab"])
     if cv.get("herramientas"):
-        doc.add_paragraph("Herramientas: " + lista(cv["herramientas"]))
+        doc.add_paragraph(L["herr"] + ": " + lista(cv["herramientas"]))
     if cv.get("metodologias"):
-        doc.add_paragraph("Metodologías: " + lista(cv["metodologias"]))
+        doc.add_paragraph(L["met"] + ": " + lista(cv["metodologias"]))
     if cv.get("idiomas"):
-        titulo_seccion("Idiomas")
+        titulo_seccion(L["idi"])
         doc.add_paragraph(lista(cv["idiomas"]))
     if cv.get("informacion_adicional"):
-        titulo_seccion("Información adicional")
+        titulo_seccion(L["info"])
         doc.add_paragraph(lista(cv["informacion_adicional"]))
     if cv.get("nota_final"):
         doc.add_paragraph(cv["nota_final"])
 
-    doc.core_properties.title = f"{cv['nombre']} - Hoja de vida"
+    doc.core_properties.title = f"{cv['nombre']} - {L['doc']}"
     doc.core_properties.author = cv["nombre"]
     doc.save(salida)
     print("DOCX generado:", salida)

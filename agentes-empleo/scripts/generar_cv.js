@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Genera un CV en formato ATS (PDF con texto seleccionable, una sola columna) a partir de un JSON.
-// Uso: node generar_cv.js cv.json salida.pdf
+// Uso: node generar_cv.js cv.json salida.pdf   ("idioma": "en" en el JSON para un CV en inglés)
 // Reglas ATS que respeta la plantilla:
 //   - Una sola columna, sin tablas, sin columnas, sin cuadros de texto, sin íconos ni imágenes.
 //   - Datos de contacto en el cuerpo (no en encabezado/pie de página).
@@ -21,16 +21,26 @@ const e = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').re
 const b = (s) => e(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
 const lista = (x) => Array.isArray(x) ? x.join(', ') : (x || '');
 
+// "idioma": "en" en el JSON cambia los títulos de sección y etiquetas a inglés (el contenido se redacta en el JSON)
+const EN = cv.idioma === 'en';
+const L = EN
+  ? { tel: 'Phone', mail: 'Email', ubi: 'Location', doc: 'Resume', perfil: 'Professional Summary', logros: 'Key Achievements',
+      comp: 'Core Competencies', exp: 'Professional Experience', otras: 'Other Experience', edu: 'Education',
+      hab: 'Technical Skills', herr: 'Tools', met: 'Methodologies', idi: 'Languages', info: 'Additional Information' }
+  : { tel: 'Teléfono', mail: 'Correo', ubi: 'Ubicación', doc: 'Hoja de vida', perfil: 'Perfil profesional', logros: 'Logros destacados',
+      comp: 'Competencias clave', exp: 'Experiencia laboral', otras: 'Otras experiencias', edu: 'Educación',
+      hab: 'Habilidades técnicas', herr: 'Herramientas', met: 'Metodologías', idi: 'Idiomas', info: 'Información adicional' };
+
 const c = cv.contacto || {};
 const contacto = [
-  c.telefono && `Teléfono: ${e(c.telefono)}`,
-  c.email && `Correo: ${e(c.email)}`,
+  c.telefono && `${L.tel}: ${e(c.telefono)}`,
+  c.email && `${L.mail}: ${e(c.email)}`,
   c.linkedin && `LinkedIn: ${e(c.linkedin)}`,
-  c.ubicacion && `Ubicación: ${e(c.ubicacion)}`,
+  c.ubicacion && `${L.ubi}: ${e(c.ubicacion)}`,
 ].filter(Boolean).join(' | ');
 
-const html = `<!doctype html><html lang="es"><head><meta charset="utf-8">
-<title>${e(cv.nombre)} - Hoja de vida</title>
+const html = `<!doctype html><html lang="${EN ? 'en' : 'es'}"><head><meta charset="utf-8">
+<title>${e(cv.nombre)} - ${L.doc}</title>
 <style>
   @page { size: A4; margin: 16mm 17mm 16mm 17mm; }
   body { font-family: "Liberation Sans", Arial, Helvetica, sans-serif; color: #000; font-size: 10.5pt; line-height: 1.35; margin: 0; }
@@ -49,14 +59,14 @@ const html = `<!doctype html><html lang="es"><head><meta charset="utf-8">
 <p class="titular">${e(cv.titular)}</p>
 <p class="contacto">${contacto}</p>
 
-<h2>Perfil profesional</h2>
+<h2>${L.perfil}</h2>
 <p>${b(cv.perfil)}</p>
 
-${(cv.logros_clave || []).length ? `<h2>Logros destacados</h2><ul>${cv.logros_clave.map(l => `<li>${b(l)}</li>`).join('')}</ul>` : ''}
+${(cv.logros_clave || []).length ? `<h2>${L.logros}</h2><ul>${cv.logros_clave.map(l => `<li>${b(l)}</li>`).join('')}</ul>` : ''}
 
-${(cv.competencias || []).length ? `<h2>Competencias clave</h2><p>${e(lista(cv.competencias))}</p>` : ''}
+${(cv.competencias || []).length ? `<h2>${L.comp}</h2><p>${e(lista(cv.competencias))}</p>` : ''}
 
-<h2>Experiencia laboral</h2>
+<h2>${L.exp}</h2>
 ${(cv.experiencia || []).map(x => `<div class="exp">
   <p class="cargo">${e(x.cargo)} | ${e(x.fechas)}</p>
   <p class="empresa">${e(x.empresa)}${x.lugar ? ', ' + e(x.lugar) : ''}</p>
@@ -64,17 +74,17 @@ ${(cv.experiencia || []).map(x => `<div class="exp">
   <ul>${(x.logros || []).map(l => `<li>${b(l)}</li>`).join('')}</ul>
 </div>`).join('')}
 
-${(cv.otras_experiencias || []).length ? `<h2>Otras experiencias</h2><ul>${cv.otras_experiencias.map(x => `<li><strong>${e(x.cargo)}</strong> | ${e(x.empresa)} | ${e(x.fechas)}</li>`).join('')}</ul>` : ''}
+${(cv.otras_experiencias || []).length ? `<h2>${L.otras}</h2><ul>${cv.otras_experiencias.map(x => `<li><strong>${e(x.cargo)}</strong> | ${e(x.empresa)} | ${e(x.fechas)}</li>`).join('')}</ul>` : ''}
 
-<h2>Educación</h2>
+<h2>${L.edu}</h2>
 <ul>${(cv.educacion || []).map(x => `<li><strong>${e(x.titulo)}</strong> | ${e(x.institucion)} | ${e(x.anio)}</li>`).join('')}</ul>
 
-<h2>Habilidades técnicas</h2>
-${cv.herramientas ? `<p>Herramientas: ${e(lista(cv.herramientas))}</p>` : ''}
-${cv.metodologias ? `<p>Metodologías: ${e(lista(cv.metodologias))}</p>` : ''}
+<h2>${L.hab}</h2>
+${cv.herramientas ? `<p>${L.herr}: ${e(lista(cv.herramientas))}</p>` : ''}
+${cv.metodologias ? `<p>${L.met}: ${e(lista(cv.metodologias))}</p>` : ''}
 
-${cv.idiomas ? `<h2>Idiomas</h2><p>${e(lista(cv.idiomas))}</p>` : ''}
-${cv.informacion_adicional ? `<h2>Información adicional</h2><p>${e(lista(cv.informacion_adicional))}</p>` : ''}
+${cv.idiomas ? `<h2>${L.idi}</h2><p>${e(lista(cv.idiomas))}</p>` : ''}
+${cv.informacion_adicional ? `<h2>${L.info}</h2><p>${e(lista(cv.informacion_adicional))}</p>` : ''}
 ${cv.nota_final ? `<p style="margin-top:8px">${e(cv.nota_final)}</p>` : ''}
 </body></html>`;
 

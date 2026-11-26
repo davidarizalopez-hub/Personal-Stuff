@@ -24,6 +24,7 @@ Reglas comunes (veracidad, criterios, puntaje, almacenamiento): [`agentes/00-com
 - `scripts/generar_cv.js`: CV en formato ATS (PDF de una columna, máximo 2 páginas) con Playwright y Chromium.
   Uso: `node generar_cv.js cv.json salida.pdf`
 - `scripts/generar_cv_docx.py`: el mismo CV en Word (python-docx). Uso: `python3 generar_cv_docx.py cv.json salida.docx`
+  Con `"idioma": "en"` en el JSON, ambos generadores ponen los títulos y etiquetas en inglés.
 - `scripts/generar_carta.js` y `scripts/generar_carta_docx.py`: carta de presentación de una página (PDF y Word).
   Uso: `node generar_carta.js carta.json salida.pdf` y `python3 generar_carta_docx.py carta.json salida.docx`
 - `ejemplos/cv_ejemplo.json` y `ejemplos/carta_ejemplo.json`: estructura de los JSON que reciben los generadores
