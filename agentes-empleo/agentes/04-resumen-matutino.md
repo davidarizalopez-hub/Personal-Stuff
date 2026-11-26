@@ -25,6 +25,8 @@ Lee primero `agentes/00-comun.md` y haz la preparación.
    No respondas ningún correo: solo resume e indica la acción sugerida.
 3. **Ofertas:** los `ofertas_*.json` de las últimas 24 horas (nuevas) y de los últimos 10 días (seguimiento).
 4. **LinkedIn:** el documento `LinkedIn_<hoy>` (o el más reciente) de `CONFIG.CARPETA_LINKEDIN`.
+5. **Empleo remoto:** el `ofertas_remoto_*` más reciente de `CONFIG.CARPETA_OFERTAS` y el `cuentas_remoto_*` más
+   reciente de `CONFIG.CARPETA_SISTEMA`.
 
 ## Ofertas destacadas para seguimiento constante (máximo 7)
 
@@ -60,8 +62,15 @@ escribirle", "aplicar hoy en el portal con el CV adaptado", "preparar entrevista
      procesó el Postulador desde el último resumen.
   5. **LinkedIn hoy (15 minutos):** la mejora del perfil del día (resumida), cuántas invitaciones enviar
      con el enlace al documento del día, y la publicación o los comentarios sugeridos.
-  6. **Qué corregir del perfil de LinkedIn** (de 3 a 5 puntos priorizados, acumulando lo pendiente).
-  7. **Pendientes de David:** lo que solo él puede resolver (datos del CV por confirmar en
+  6. **Empleo remoto:**
+     - Las ofertas remotas nuevas de prioridad A y B, con su elegibilidad (Colombia o LATAM) y su tipo de
+       contrato (empleado o contractor).
+     - **Cuentas para crear hoy:** las 2 de `proximas` en `cuentas_remoto`, con el enlace y los pasos cortos
+       (qué llenar del perfil y qué alertas configurar).
+     - Pide a David que responda «cuenta creada <plataforma>» cuando la cree. Busca esas respuestas
+       (`from:me "cuenta creada" newer_than:7d`) y anótalas en un nuevo `cuentas_remoto_*`.
+  7. **Qué corregir del perfil de LinkedIn** (de 3 a 5 puntos priorizados, acumulando lo pendiente).
+  8. **Pendientes de David:** lo que solo él puede resolver (datos del CV por confirmar en
      `_pendientes_de_confirmar`, exportar el PDF de LinkedIn, cifras de impacto que faltan).
 - Envíalo con `send_message` y ponle la etiqueta `CONFIG.ETIQUETA_RESUMEN`.
 - Si una ejecución de otro agente no dejó su archivo (por ejemplo, no hay `ofertas_*` de las últimas
