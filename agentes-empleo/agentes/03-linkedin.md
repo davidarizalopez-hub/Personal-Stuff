@@ -71,7 +71,8 @@ arriesga. El agente prepara todo y David lo ejecuta con unos pocos toques.
    7. Sección "Destacado": CV ATS en PDF y un caso o publicación sobre optimización de fletes.
    8. Pedir 2 recomendaciones (exjefe de Banasan y un cliente de PC Tronic), con el texto de la solicitud listo.
    9. Foto profesional y banner (logística o puerto con su propuesta de valor). Ubicación: Barranquilla.
-   10. Certificaciones: Lean Six Sigma Green Belt y TOEFL iBT (solo si tiene los certificados), e idiomas.
+   10. Certificaciones: TOEFL iBT y EF SET (solo si tiene los certificados), e idiomas. Lean Six Sigma va como formación o aptitud,
+       no como certificación: David aún no tiene el Green Belt.
    11. Alertas de empleo en LinkedIn con los cargos objetivo para la Costa Norte y Colombia.
    12. Responder rápido los InMails y activar "Recibir mensajes de reclutadores".
 

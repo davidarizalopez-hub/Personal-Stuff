@@ -33,6 +33,8 @@ mkdir -p /tmp/trabajo && cd /tmp/trabajo
 - Cumple también las decisiones de David anotadas en `_reglas` del perfil maestro. Desde el 26-nov-2026, Energía Solar S.A.
   no va como experiencia laboral ni como empleo actual (ni en CV, ni en carta, ni en correo, ni con sus cifras). Solo puede
   aparecer en «otras experiencias» como la asesoría del proyecto de torre de control logística (08/2026–11/2026).
+- Lean Six Sigma: David tiene formación (conceptos y estudios), **no** la certificación Green Belt. Nunca escribas «Green Belt»,
+  «GB» ni «certificado»: usa «formación en Lean Six Sigma» (en inglés, «Lean Six Sigma training»).
 - Si una oferta exige algo que el candidato no tiene (por ejemplo, inglés C1, título de maestría o
   experiencia en un sector concreto), no lo afirmes: baja el puntaje de afinidad y, si se postula, no lo
   menciones.
@@ -85,7 +87,7 @@ Prioridad: **A** ≥ 75, **B** 60–74, **C** < 60 (no se postula, solo queda re
   Bajar si piden trayectoria demostrada con cuotas de venta o un sector muy específico.
 - Administrativo y gerencia general de sede: 22–35 (presupuestos, gestión humana y procesos en GRAM; P&G en Banasan).
 - Compras y abastecimiento: 25–35 (negociación con proveedores y ahorros del 12 % al 26 % en fletes).
-- Producción, planta, mejora continua y procesos: 18–30 (Lean Six Sigma Green Belt, 5S; −23 % paradas y −35 % quiebres en
+- Producción, planta, mejora continua y procesos: 18–30 (formación en Lean Six Sigma, 5S; −23 % paradas y −35 % quiebres en
   Banasan; torre de control logística). Bajar si exigen experiencia directa como gerente de planta, o química o calidad (BPM, HACCP).
 
 ## 5. Seguridad y buen juicio

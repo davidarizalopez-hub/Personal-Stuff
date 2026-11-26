@@ -71,7 +71,7 @@ Lee primero `agentes/00-comun.md` y haz la preparación (incluye leer el perfil 
        - Servicio al cliente: Geotech (líder de servicio al cliente y PQR), Arena 57, OTIF de 99,9 % en Banasan.
        - Administrativo / gerencia general: presupuestos (USD 2 M/mes, $900 MM), gestión humana y procesos (GRAM administrativo),
          P&G en superávit, relación sindical.
-       - Producción / mejora continua: Lean Six Sigma Green Belt, 5S, KPIs; −23 % paradas y −35 % quiebres en Banasan; asesoría de
+       - Producción / mejora continua: formación en Lean Six Sigma, 5S, KPIs; −23 % paradas y −35 % quiebres en Banasan; asesoría de
          torre de control logística (solo en «otras experiencias»).
        Nunca afirmes cuotas de venta, certificaciones (PMP, ISO) ni cargos de planta que no estén en el perfil.
      - **Documentos por oferta (regla de David, 26-nov-2026):** a cada oferta van **siempre** el CV adaptado en español y la
@@ -118,7 +118,7 @@ Lee primero `agentes/00-comun.md` y haz la preparación (incluye leer el perfil 
         de liderazgo. Fuentes válidas: vive en Barranquilla y conoce la Costa Caribe; operó transporte en
         Magdalena y La Guajira; empezó su carrera en distribución de consumo masivo en Coca-Cola FEMSA; creó y
         dirigió un emprendimiento propio (Arena 57); lidera equipos grandes en operación 24/7; decide con datos
-        (Power BI, SQL); mejora continua (Lean Six Sigma Green Belt). Nada de frases genéricas ("soy una
+        (Power BI, SQL); mejora continua (formación en Lean Six Sigma; no está certificado). Nada de frases genéricas ("soy una
         persona proactiva y apasionada") ni de afirmaciones que no estén en el perfil maestro.
      5. *Cierre*: disponibilidad para trasladarse si el cargo no es en Barranquilla (fuera de Colombia, la frase del
         permiso de trabajo patrocinado), invitación a una entrevista y agradecimiento. Salario solo si la oferta
@@ -133,7 +133,7 @@ Lee primero `agentes/00-comun.md` y haz la preparación (incluye leer el perfil 
      ```
    - Sube ambos a `CONFIG.CARPETA_CV` igual que el CV y guarda los enlaces en `carta_pdf_url` y `carta_docx_url`.
    - **CV pendientes con Energía Solar (desde el 26-nov-2026):** si hay entradas `lista_para_portal` de los últimos 10 días
-     cuya oferta siga abierta y cuyo CV o carta muestre a Energía Solar como experiencia laboral, regenera CV y carta con el
+     cuya oferta siga abierta y cuyo CV o carta muestre a Energía Solar como experiencia laboral o diga «Green Belt», regenera CV y carta con el
      perfil maestro vigente (y el CV en inglés si es fuera de Colombia). Máximo 6 por ejecución, primero las de prioridad A.
      Actualiza los enlaces en el registro.
    - **Cartas pendientes:** si hay entradas `lista_para_portal` de los últimos 10 días sin `carta_pdf_url` cuya
