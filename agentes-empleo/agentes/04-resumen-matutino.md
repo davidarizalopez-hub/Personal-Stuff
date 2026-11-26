@@ -48,9 +48,9 @@ escribirle", "aplicar hoy en el portal con el CV adaptado", "preparar entrevista
   3. **Ofertas destacadas para seguimiento** (la lista de arriba).
   4. **Aplica hoy en portales:** las postulaciones `lista_para_portal` (máximo 6, primero las de prioridad A),
      numeradas. Cada una con un enlace **"Ver oferta y postularme"** a la URL de la oferta (no al CV) y los
-     nombres del CV y de la carta de presentación que debe adjuntar. **Adjunta al correo los PDF del CV y de la
+     nombres del CV y de la carta de presentación que debe adjuntar (y del CV en inglés si la oferta es fuera de Colombia). **Adjunta al correo los PDF del CV y de la
      carta** de esas ofertas (descárgalos de `CONFIG.CARPETA_CV` con `download_file_content` usando los enlaces
-     `cv_pdf_url` y `carta_pdf_url` del registro, y adjúntalos con referencia `sha256:<hash>:<ruta>`), para
+     `cv_pdf_url`, `carta_pdf_url` y, si existe, `cv_en_pdf_url` del registro, y adjúntalos con referencia `sha256:<hash>:<ruta>`), para
      que David los tenga a mano al postularse desde el celular. Indica: "Al aplicar, sube el CV adaptado y la
      carta (o pega su texto en el campo de presentación del portal) y responde a este correo con 'aplicada' y
      los números (por ejemplo, 'aplicada 1, 2, 5')". Si una entrada aún no tiene carta, dilo ("carta en

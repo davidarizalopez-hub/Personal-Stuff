@@ -30,6 +30,9 @@ mkdir -p /tmp/trabajo && cd /tmp/trabajo
   certificaciones o idiomas. Adaptar un CV es **elegir, ordenar y redactar** hechos del perfil maestro
   usando las palabras clave de la oferta cuando el hecho realmente coincide.
 - Lo que esté en `_pendientes_de_confirmar` del perfil no se usa hasta que el candidato lo confirme.
+- Cumple también las decisiones de David anotadas en `_reglas` del perfil maestro. Desde el 26-nov-2026, Energía Solar S.A.
+  no va como experiencia laboral ni como empleo actual (ni en CV, ni en carta, ni en correo, ni con sus cifras). Solo puede
+  aparecer en «otras experiencias» como la asesoría del proyecto de torre de control logística (08/2026–11/2026).
 - Si una oferta exige algo que el candidato no tiene (por ejemplo, inglés C1, título de maestría o
   experiencia en un sector concreto), no lo afirmes: baja el puntaje de afinidad y, si se postula, no lo
   menciones.
@@ -73,7 +76,8 @@ Prioridad: **A** ≥ 75, **B** 60–74, **C** < 60 (no se postula, solo queda re
 
 **Guía de afinidad por área** (sobre 45; usa hechos reales del perfil maestro):
 - Logística, transporte, distribución, supply chain, comercio exterior: 35–45 (núcleo del perfil).
-- Operaciones y gerencia de operaciones multisede: 30–42 (ES con 300+ personas en 4 plantas 24/7).
+- Operaciones y gerencia de operaciones multisede: 28–40 (Banasan: 70 personas, 80 vehículos y USD 2 M/mes; Geotech: 40 personas;
+  asesoría de torre de control logística para 4 plantas 24/7).
 - Proyectos / PMO: 25–38 (PC Tronic: 7 proyectos simultáneos, 95 % a tiempo, presupuestos de $900 MM, margen +18 %).
   Bajar si exigen PMP, ingeniería civil o de sistemas como requisito obligatorio.
 - Servicio al cliente y experiencia del cliente: 25–35 (Geotech: líder de servicio al cliente; Arena 57; PC Tronic postventa B2B).
@@ -81,8 +85,8 @@ Prioridad: **A** ≥ 75, **B** 60–74, **C** < 60 (no se postula, solo queda re
   Bajar si piden trayectoria demostrada con cuotas de venta o un sector muy específico.
 - Administrativo y gerencia general de sede: 22–35 (presupuestos, gestión humana y procesos en GRAM; P&G en Banasan).
 - Compras y abastecimiento: 25–35 (negociación con proveedores y ahorros del 12 % al 26 % en fletes).
-- Producción, planta, mejora continua y procesos: 18–32 (Lean Six Sigma Green Belt; sincronización de producción y despacho
-  en ES). Bajar si exigen experiencia directa como gerente de planta, o química o calidad (BPM, HACCP).
+- Producción, planta, mejora continua y procesos: 18–30 (Lean Six Sigma Green Belt, 5S; −23 % paradas y −35 % quiebres en
+  Banasan; torre de control logística). Bajar si exigen experiencia directa como gerente de planta, o química o calidad (BPM, HACCP).
 
 ## 5. Seguridad y buen juicio
 

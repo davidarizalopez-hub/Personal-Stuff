@@ -68,12 +68,18 @@ Lee primero `agentes/00-comun.md` y haz la preparación (incluye leer el perfil 
        - Proyectos: PC Tronic primero en logros (7 proyectos, 95 % a tiempo, $900 MM, margen +18 %) y metodologías (SCRUM, Agile, híbrido).
        - Comercial / ventas / cuentas clave: Geotech (consecución de clientes, planes de servicio y venta), PC Tronic (relación B2B y
          postventa), Coca-Cola (CAV de preventa, P&G de concesionarios); agrega Arena 57 como experiencia con sus logros.
-       - Servicio al cliente: Geotech (líder de servicio al cliente y PQR), Arena 57, OTIF y penalidades −80 % en ES.
+       - Servicio al cliente: Geotech (líder de servicio al cliente y PQR), Arena 57, OTIF de 99,9 % en Banasan.
        - Administrativo / gerencia general: presupuestos (USD 2 M/mes, $900 MM), gestión humana y procesos (GRAM administrativo),
          P&G en superávit, relación sindical.
-       - Producción / mejora continua: sincronización de producción, almacenamiento y despacho en ES, Lean Six Sigma Green Belt, 5S, KPIs.
+       - Producción / mejora continua: Lean Six Sigma Green Belt, 5S, KPIs; −23 % paradas y −35 % quiebres en Banasan; asesoría de
+         torre de control logística (solo en «otras experiencias»).
        Nunca afirmes cuotas de venta, certificaciones (PMP, ISO) ni cargos de planta que no estén en el perfil.
-     - **Oferta en inglés:** pon `"idioma": "en"` en el JSON (los generadores cambian títulos y etiquetas) y redacta
+     - **Documentos por oferta (regla de David, 26-nov-2026):** a cada oferta van **siempre** el CV adaptado en español y la
+       carta. Si confirmas que la oferta es **fuera de Colombia**, genera además el **CV adaptado en inglés** con los mismos
+       parámetros (experiencia y resultados elegidos y ordenados según la oferta), con el nombre
+       `CV_David_Ariza_<Empresa>_<Cargo>_EN.pdf` y `.docx`. Súbelo a `CONFIG.CARPETA_CV` y guarda sus enlaces en
+       `cv_en_pdf_url` y `cv_en_docx_url` del registro.
+     - **Oferta en inglés o CV en inglés:** pon `"idioma": "en"` en el JSON (los generadores cambian títulos y etiquetas) y redacta
        todo el contenido en inglés. Parte del `cv_base_en_*` más reciente de `CONFIG.CARPETA_SISTEMA`: es la
        traducción fiel del perfil maestro revisada con David. Adáptalo igual que el CV en español, sin agregar
        hechos que no estén en el perfil maestro.
@@ -126,6 +132,10 @@ Lee primero `agentes/00-comun.md` y haz la preparación (incluye leer el perfil 
      python3 /tmp/ps/agentes-empleo/scripts/generar_carta_docx.py carta_<id>.json "Carta_David_Ariza_<Empresa>_<Cargo>.docx"
      ```
    - Sube ambos a `CONFIG.CARPETA_CV` igual que el CV y guarda los enlaces en `carta_pdf_url` y `carta_docx_url`.
+   - **CV pendientes con Energía Solar (desde el 26-nov-2026):** si hay entradas `lista_para_portal` de los últimos 10 días
+     cuya oferta siga abierta y cuyo CV o carta muestre a Energía Solar como experiencia laboral, regenera CV y carta con el
+     perfil maestro vigente (y el CV en inglés si es fuera de Colombia). Máximo 6 por ejecución, primero las de prioridad A.
+     Actualiza los enlaces en el registro.
    - **Cartas pendientes:** si hay entradas `lista_para_portal` de los últimos 10 días sin `carta_pdf_url` cuya
      oferta siga abierta, genérales la carta en esta ejecución (máximo 6, primero las de prioridad A) y
      actualiza la entrada en el registro.
@@ -146,7 +156,8 @@ Lee primero `agentes/00-comun.md` y haz la preparación (incluye leer el perfil 
    - Envía con `send_message`: `to` = el correo de la oferta, `body` en texto plano y `htmlBody` con el
      mismo contenido en HTML simple, y en `attachments` **dos PDF**: el CV (`filename:
      CV_David_Ariza_<Empresa>.pdf`) y la carta (`filename: Carta_presentacion_David_Ariza_<Empresa>.pdf`), con
-     referencia `sha256:<hash>:<ruta>` y `mimeType: application/pdf`. Nunca adjuntes los .docx.
+     referencia `sha256:<hash>:<ruta>` y `mimeType: application/pdf`. Si la oferta es fuera de Colombia, adjunta
+     **tres PDF**: también el CV en inglés (`filename: CV_David_Ariza_<Empresa>_EN.pdf`), y en el correo di «Adjunto mi hoja de vida en español y en inglés y una carta de presentación para el cargo.». Nunca adjuntes los .docx.
    - Ponle la etiqueta `CONFIG.ETIQUETA_POSTULACIONES` al mensaje enviado (`label_message`).
    - Registra la entrada con `estado: enviada`, `thread_id` y `message_id`.
 
