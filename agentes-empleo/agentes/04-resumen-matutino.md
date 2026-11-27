@@ -27,6 +27,8 @@ Lee primero `agentes/00-comun.md` y haz la preparación.
 4. **LinkedIn:** el documento `LinkedIn_<hoy>` (o el más reciente) de `CONFIG.CARPETA_LINKEDIN`.
 5. **Empleo remoto:** el `ofertas_remoto_*` más reciente de `CONFIG.CARPETA_OFERTAS` y el `cuentas_remoto_*` más
    reciente de `CONFIG.CARPETA_SISTEMA`.
+6. **Marca personal:** con `getScheduledPosts` de la marca `CONFIG.METRICOOL_MARCA` (zona America/Bogota), las
+   publicaciones de hoy y de mañana. Las que siguen con `draft: true` no se publican sin el OK de David.
 
 ## Ofertas destacadas para seguimiento constante (máximo 7)
 
@@ -60,8 +62,10 @@ escribirle", "aplicar hoy en el portal con el CV adaptado", "preparar entrevista
      actualiza esas entradas a `aplicada_por_david` en un nuevo `registro_postulaciones_*`.
      Recuérdale también la carpeta "Vacantes LinkedIn (sube aquí las capturas)" del Drive, y cuántas capturas
      procesó el Postulador desde el último resumen.
-  5. **LinkedIn hoy (15 minutos):** la mejora del perfil del día (resumida), cuántas invitaciones enviar
-     con el enlace al documento del día, y la publicación o los comentarios sugeridos.
+  5. **LinkedIn hoy (15 minutos):** la mejora del perfil del día (resumida), la acción de Premium del día,
+     cuántas invitaciones enviar con el enlace al documento del día, y los comentarios sugeridos. Si hoy o
+     mañana hay una publicación en Metricool que sigue como borrador, ponla primero: tema, hora y enlace
+     «Abrir en Metricool para aprobarla». Sin su OK no se publica.
   6. **Empleo remoto:**
      - Las ofertas remotas nuevas de prioridad A y B, con su elegibilidad (Colombia o LATAM) y su tipo de
        contrato (empleado o contractor).

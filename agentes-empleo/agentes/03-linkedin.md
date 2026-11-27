@@ -16,10 +16,14 @@ buscar en LinkedIn (Publicaciones, filtradas por "Últimas") términos como `#va
 
 ## Lo que este agente NO hace (y por qué)
 
-No inicia sesión en LinkedIn, no envía invitaciones, no da "me gusta" ni publica por su cuenta. Las
-Condiciones de uso de LinkedIn prohíben los bots y la automatización de cuentas, y LinkedIn restringe o
-suspende los perfiles que la usan. El perfil de David es su activo principal en esta búsqueda: no se
-arriesga. El agente prepara todo y David lo ejecuta con unos pocos toques.
+No inicia sesión en LinkedIn, no envía invitaciones ni InMails y no da "me gusta". Las Condiciones de
+uso de LinkedIn prohíben los bots y la automatización de cuentas, y LinkedIn restringe o suspende los perfiles
+que la usan. El perfil de David es su activo principal en esta búsqueda: no se arriesga. El agente prepara
+todo y David lo ejecuta con unos pocos toques. Las publicaciones son la única excepción: las prepara el
+agente de marca personal (`06-marca-personal.md`) como borradores en Metricool, que publica por la API oficial
+de LinkedIn solo cuando David los aprueba.
+
+**David tiene LinkedIn Premium.** Aprovéchalo en cada plan (paso 4).
 
 ## Pasos
 
@@ -41,34 +45,52 @@ arriesga. El agente prepara todo y David lo ejecuta con unos pocos toques.
      Siemens Logistics, Almaviva, Opl Carga, Grupo Logístico Andino).
    - Headhunters de logística y operaciones en Colombia (Michael Page, Hays, Korn Ferry, Adecco, ManpowerGroup).
    Para cada persona: nombre, cargo, empresa, URL del perfil y **dos textos**:
-   - Nota de invitación (máximo 200 caracteres, personalizada, sin pedir trabajo de entrada). Las cuentas
-     gratuitas tienen pocas notas personalizadas al mes: márcalas solo en las 3 personas más importantes; a
-     las demás se les envía la invitación sin nota.
+   - Nota de invitación (máximo 300 caracteres, personalizada, sin pedir trabajo de entrada). Con Premium,
+     las notas personalizadas no tienen el límite mensual de las cuentas gratuitas: escribe una para cada persona.
    - Mensaje para después de que acepte (máximo 500 caracteres): presentación de valor + cargo de interés.
 
-3. **Publicación** (lunes, miércoles y viernes; los demás días, 3 comentarios sugeridos). Borrador de 120 a
-   200 palabras en primera persona, basado en experiencias reales del perfil maestro: logística de
-   recolección de fruta en Magdalena y La Guajira, negociación de fletes, planes de contingencia ante
-   bloqueos viales, relación con sindicatos, última milla, inventarios en proyectos, monitoreo vehicular,
-   operaciones portuarias. Debe terminar con una pregunta a la audiencia, llevar de 3 a 5 hashtags
-   (#Logística #SupplyChain #Transporte #Barranquilla #CostaCaribe) y no inventar cifras. Sugiere el
-   horario: martes a jueves entre 7:30 y 8:30 a. m.
-   Los días sin publicación: 3 comentarios de valor (2 o 3 líneas) para dejar en publicaciones recientes
-   de reclutadores o líderes de logística de la región (con el enlace a la publicación si lo encuentras).
+3. **Publicación y comentarios.** Las publicaciones (lunes, miércoles y viernes) las prepara el agente de marca
+   personal y quedan como borradores en Metricool. Lee el `marca_personal_*.json` más reciente de
+   `CONFIG.CARPETA_MARCA` (si el CONFIG no la trae, búscala en `CONFIG.CARPETA_RAIZ` por el título
+   «Marca personal»). Si hoy hay una publicación, pon su tema, sus primeras líneas y el enlace «Abrir en
+   Metricool». Recuérdale que sin su OK no se publica, y que responda los comentarios en la primera hora.
+   Todos los días: 3 comentarios de valor (2 o 3 líneas) para dejar en publicaciones recientes de reclutadores,
+   headhunters o líderes de logística de la región (con el enlace a la publicación si lo encuentras). Basados en
+   experiencias reales del perfil maestro y sin inventar cifras.
 
-4. **Mejora del perfil del día** (una sola, concreta, con el texto listo para copiar y pegar). Rota esta
+4. **LinkedIn Premium del día** (una acción concreta, rotando; revisa los documentos anteriores para no repetir):
+   - **InMail (2 por semana, martes y jueves):** un borrador listo para copiar a un reclutador, headhunter o
+     gerente que contrata en una empresa con oferta A o B, o en una empresa objetivo de la Costa. Asunto de
+     menos de 80 caracteres y cuerpo de 400 a 700 caracteres, con propuesta de valor, un logro con cifra real y
+     una pregunta concreta. Los créditos de InMail son limitados: que David revise cuántos tiene en «Mi
+     Premium». En general, LinkedIn devuelve el crédito si la persona responde.
+   - **Quién vio tu perfil (lunes y viernes):** que David abra «Quién ha visto tu perfil» y escriba a los
+     reclutadores y gerentes de las empresas objetivo. Dale un mensaje modelo de 300 caracteres o menos que
+     agradezca la visita y ofrezca su perfil para cargos de logística u operaciones.
+   - **Postulación con ventaja (miércoles):** en las ofertas A que estén en LinkedIn, que revise la información
+     de Premium sobre cómo se compara con los demás postulantes y quién publicó la vacante, para escribirle
+     a esa persona. Si LinkedIn le ofrece marcar la oferta como preferida (Top Choice), que lo haga solo en
+     las mejores.
+   - **Información de empresas (sábado):** con Premium puede ver el crecimiento de la plantilla y las
+     contrataciones recientes de las empresas objetivo. Sugiere 2 empresas para revisar y a quién contactar.
+   - **LinkedIn Learning (domingo):** un curso corto relacionado con los cargos objetivo (Power BI, SAP,
+     gestión de proyectos, cadena de suministro, negociación). El certificado se agrega al perfil solo
+     cuando David lo termine. Un curso de Lean Six Sigma no es la certificación Green Belt.
+
+5. **Mejora del perfil del día** (una sola, concreta, con el texto listo para copiar y pegar). Rota esta
    lista y no repitas una ya hecha (revisa los documentos anteriores):
    1. Titular (220 caracteres) con palabras clave: "Gerente de Logística y Transporte | Operaciones |
       Supply Chain | Fletes, Distribución y Puertos | 14 años | Barranquilla – Disponible para traslado".
    2. "Open to Work" visible solo para reclutadores, con los cargos objetivo, las ciudades (Barranquilla,
-      Cartagena, Santa Marta, Bogotá, Medellín), presencial e híbrido, y fecha de inicio inmediata.
+      Cartagena, Santa Marta, Bogotá, Medellín), presencial, híbrido y remoto, y fecha de inicio inmediata.
    3. "Acerca de" (de 1.800 a 2.200 caracteres) con propuesta de valor, logros reales y llamado a la acción
       con su correo.
    4. Experiencia en Banasan con logros y alcance (70 personas, Magdalena y La Guajira, P&G con superávit, fletes, sindicato).
    5. Experiencia en PC Tronic y en Geotech (20 y 40 personas).
    6. Aptitudes: las 5 principales en este orden: Gestión logística, Gestión del transporte, Cadena de
       suministro, Gestión de operaciones, Negociación. Pide 3 validaciones a excompañeros.
-   7. Sección "Destacado": CV ATS en PDF y un caso o publicación sobre optimización de fletes.
+   7. Sección "Destacado": CV ATS en PDF y las publicaciones con mejores resultados (las que señale el
+      agente de marca personal), como la de negociación de fletes.
    8. Pedir 2 recomendaciones (exjefe de Banasan y un cliente de PC Tronic), con el texto de la solicitud listo.
    9. Foto profesional y banner (logística o puerto con su propuesta de valor). Ubicación: Barranquilla.
    10. Certificaciones: TOEFL iBT y EF SET (solo si tiene los certificados), e idiomas. Lean Six Sigma va como formación o aptitud,
@@ -76,9 +98,10 @@ arriesga. El agente prepara todo y David lo ejecuta con unos pocos toques.
    11. Alertas de empleo en LinkedIn con los cargos objetivo para la Costa Norte y Colombia.
    12. Responder rápido los InMails y activar "Recibir mensajes de reclutadores".
 
-5. **Guardar.** Crea en `CONFIG.CARPETA_LINKEDIN` un **Google Doc** llamado `LinkedIn_AAAA-MM-DD`.
+6. **Guardar.** Crea en `CONFIG.CARPETA_LINKEDIN` un **Google Doc** llamado `LinkedIn_AAAA-MM-DD`.
    Súbelo como HTML (`contentMimeType: "text/html"`, **con** conversión) para que se vea bien en el
-   celular, con tres secciones: Mejora de perfil del día, Personas para conectar (tabla: nombre, cargo,
-   empresa, enlace, nota y mensaje) y Publicación o comentarios.
+   celular, con cuatro secciones: Mejora de perfil del día, Premium del día, Personas para conectar (tabla:
+   nombre, cargo, empresa, enlace, nota y mensaje) y Publicación de hoy y comentarios.
 
-6. **Cierre:** un párrafo con la mejora del día, cuántas personas propones y el tema de la publicación.
+7. **Cierre:** un párrafo con la mejora del día, la acción de Premium, cuántas personas propones y si hoy hay
+   publicación pendiente de aprobar en Metricool.

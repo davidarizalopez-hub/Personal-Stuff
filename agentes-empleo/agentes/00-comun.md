@@ -1,6 +1,6 @@
 # Reglas comunes para todos los agentes
 
-Estas reglas aplican a los cinco agentes (Buscador, Postulador, LinkedIn, Resumen matutino y Empleo remoto).
+Estas reglas aplican a los seis agentes (Buscador, Postulador, LinkedIn, Resumen matutino, Empleo remoto y Marca personal).
 Cada agente se ejecuta como una tarea programada. El mensaje que lo despierta trae un bloque
 `CONFIG` con los IDs privados (carpetas de Drive, etiquetas de Gmail, correo del candidato). Esos IDs
 **no** están en este repositorio porque es público.
@@ -107,6 +107,7 @@ Prioridad: **A** ≥ 75, **B** 60–74, **C** < 60 (no se postula, solo queda re
 | `CV adaptados/` | `CV_David_Ariza_<Empresa>_<Cargo>.pdf` y `.docx`, y la carta de presentación de cada postulación: `Carta_David_Ariza_<Empresa>_<Cargo>.pdf` y `.docx` | Postulador |
 | `linkedin/` | `LinkedIn_AAAA-MM-DD` (Google Doc con invitaciones, publicación y mejoras del perfil) | LinkedIn |
 | `Vacantes LinkedIn (sube aquí las capturas)/` | Capturas de publicaciones de vacantes que sube David; las ya atendidas pasan a `procesadas/` | David / Postulador |
+| `Marca personal/` (`CONFIG.CARPETA_MARCA`) | `marca_personal_AAAA-MM-DD.json` (plan semanal de publicaciones, estado de los borradores en Metricool y resultados) e imágenes de cada semana | Marca personal |
 | `sistema/` (`CONFIG.CARPETA_SISTEMA`) | Perfil maestro y `cuentas_remoto_AAAA-MM-DD.json` (guía de plataformas de empleo remoto: cuáles recomendar, cuáles creó David y las 2 próximas) | David / Empleo remoto |
 
 Para subir archivos de datos usa `create_file` con `disableConversionToGoogleType: true` y
